@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-error_reporting(0);
+error_reporting(1);
 
 function genReg($n){
 	++$n;
@@ -21,7 +21,7 @@ else{
 if(isset($_POST['submit']))
 
 {
-		include('includes/config.php');
+		include('config.php');
 		$year = date('Y');
 		$q0 = $dbh->prepare("select id from years where year = '$year'");
 		$q0->execute();
@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
 			$q = $dbh->prepare("INSERT into years (year) values ('$year')");
 			$q->execute();
 		}
-		$school = "primary";
+		$school = "secondary";
 		$regno = $_POST['regno'];
 		// var_dump($regno);
 // 		$regno = genReg($n);
@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
 		    else{
 		    	$imageType = $_FILES['passport']['type'];
 		      $image = $_FILES['passport']['tmp_name'];
-
+					// var_dump($imageType);
 		      if ($imageType == 'image/jpg' || $imageType == 'image/jpeg') {
 		        $imageType = 'jpg';
 		      }
@@ -79,8 +79,8 @@ if(isset($_POST['submit']))
 		      }
 
 		      $passport = $fname."".date('Ymdhis').".".$imageType;
-		      $loc = "../studs/secondary applicants/".$passport;
-
+					$loc = "../studs/secondary applicants/".$passport;
+					
 		      if (move_uploaded_file($image, $loc)) {
 
 				$query="INSERT INTO students(regno, fname, start_session, gender, dob, religion, state, lga, nationality, class_app, address, parent, parent_num, passport, status) VALUES (:regno, :fname, :session, :gender, :dob, :religion, :state, :lga,
@@ -245,7 +245,7 @@ if(isset($_POST['submit']))
             </div>
 						<div class="card-body">
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>: <span style="color:red">OOPS! </span><?php echo htmlentities($error); ?> </div><?php }
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+				else if($msg){?><div class="succWrap bg-sucess"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<?php
 					include 'includes/db.php';
 					$q = $db->prepare('SELECT class, id from classes');
@@ -254,7 +254,7 @@ if(isset($_POST['submit']))
 				?>
   	         	<div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" name="" method="post"action="addnew_student.php" enctype="multipart/form-data">
+							<form class="form-horizontal" name="" method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Full Name</label>
 									<div class="col-sm-8">
