@@ -13,7 +13,7 @@ function genReg($n){
 	return $regn;
 }
 
-if(strlen($_SESSION['alogin'])==0)
+if(strlen($_SESSION['login'])==0)
 	{
 header('Location:index.php');
 }
@@ -21,7 +21,7 @@ else{
 if(isset($_POST['submit']))
 
 {
-		include('config.php');
+		include('includes/config.php');
 		$year = date('Y');
 		$q0 = $dbh->prepare("select id from years where year = '$year'");
 		$q0->execute();
@@ -40,6 +40,7 @@ if(isset($_POST['submit']))
 		}
 		$school = "primary";
 		$regno = $_POST['regno'];
+		// var_dump($regno);
 // 		$regno = genReg($n);
 		$fname=$_POST['fname'];
 		$gender=$_POST['gender'];
@@ -162,19 +163,59 @@ if(isset($_POST['submit']))
 <title>Add Students</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="images/cocinlogo.jpg" type="image/jpg">
-<meta name="keywords" content="Pooled Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<link href="assets/css/style.css" rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="css/morris.css" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+<!--<link href="assets/css/style.css" rel='stylesheet' type='text/css' />-->
+<link rel="stylesheet" href="assets/css/morris.css" type="text/css"/>
+<!-- Graph CSS -->
 <link href="assets/css/font-awesome.css" rel="stylesheet">
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/sc.js"></script>
+<!-- jQuery -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<!-- //jQuery -->
+<!-- tables -->
+<!--<link rel="stylesheet" type="text/css" href="assets/css/table-style.css" />-->
+<!--<link rel="stylesheet" type="text/css" href="assets/css/basictable.css" />-->
+<!--<script type="text/javascript" src="assets/js/jquery.basictable.min.js"></script>-->
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#table').basictable();
+
+      $('#table-breakpoint').basictable({
+        breakpoint: 768
+      });
+
+      $('#table-swap-axis').basictable({
+        swapAxis: true
+      });
+
+      $('#table-force-off').basictable({
+        forceResponsive: false
+      });
+
+      $('#table-no-resize').basictable({
+        noResize: true
+      });
+
+      $('#table-two-axis').basictable();
+
+      $('#table-max-height').basictable({
+        tableWrapper: true
+      });
+    });
+</script>
+<!-- //tables -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<!-- //lined-icons -->
+</head>
+
+
   <style>
 		.errorWrap {
     padding: 10px;
@@ -195,28 +236,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</style>
 
 </head>
-<body onload="master()">
-   <div class="page-container">
-     
-   <!--/content-inner-->
-<div class="left-content">
-	   <div class="mother-grid-inner">
-              <!--header start here-->
-<?php include('includes/header.php');?>
-
-
-				     <div class="clearfix"> </div>
-				</div>
-<!--heder end here-->
-	<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a><i class="fa fa-angle-right"></i>Add Student Details </li>
-            </ol>
-		<!--grid-->
- 	<div class="grid-form">
-
-<!---->
-  <div class="grid-form1">
-  	       <h3>Add Students</h3>
+<body class="bglight bgwhite">
+<div class="container"> 
+    <div class="col-9 offset-2" style="margin-top: 40px">
+        <div class="card card-primary">
+            <div class="card-header bg-primary text-white">
+               <h3 class="text-center">Add New Student</h3> 
+            </div>
+						<div class="card-body">
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>: <span style="color:red">OOPS! </span><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<?php
@@ -227,7 +254,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				?>
   	         	<div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" name="" method="post" enctype="multipart/form-data">
+							<form class="form-horizontal" name="" method="post"action="addnew_student.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Full Name</label>
 									<div class="col-sm-8">
@@ -342,7 +369,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="row">
 			<div class="col-sm-8 col-sm-offset-3">
 				<button type="submit" name="submit" class="btn-primary btn">Add</button>
-				<button type="reset" class="btn-inverse btn">Reset</button>
+				<button type="reset" class="btn-danger btn">Reset</button>
 			</div>
 		</div>
 	</div>
@@ -384,7 +411,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
   <!--//content-inner-->
 		<!--/sidebar-menu-->
-					<?php include("includes/sidebar.php");?>
+					<?php #include("includes/sidebar.php");?>
 							  <div class="clearfix"></div>
 							</div>
 							<!--<script>-->
@@ -408,10 +435,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<!--			});-->
 							<!--</script>-->
 <!--js -->
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
-   <script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
    <!-- /Bootstrap Core JavaScript -->
 
 </body>

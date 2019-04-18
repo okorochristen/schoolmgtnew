@@ -36,17 +36,18 @@
                       </ul>
                   </li>
                   
-                  <!-- <li class="sub-menu">-->
-                  <!--    <a href="javascript:;" >-->
-                  <!--        <i class="fa fa-book"></i>-->
-                  <!--        <span>Add Students</span>-->
-                  <!--    </a>-->
-                  <!--    <ul class="sub">-->
-                          <!--<li><a  href="select-primary-class.php">Primary School</a></li>-->
-                  <!--        <li><a  href="addnew_student.php">Add Students</a></li>-->
-                          <!--<li><a  href="select-subject-mock.php">Junior & Senior Mock</a></li>-->
-                  <!--    </ul>-->
-                  <!--</li>-->
+                  <li class="sub-menu">-
+                     <a href="javascript:;" >
+                         <i class="fa fa-book"></i>
+                         <span>Students</span>
+                     </a>
+                     <ul class="sub">
+                          <!-- <li><a  href="select-primary-class.php">Primary School</a></li> -->
+                         <li><a href="addnew_student.php">Add Students</a></li>
+                         <li><a href="managenew-students.php">View Students</a></li>
+                          <!-- <li><a  href="select-subject-mock.php">Junior & Senior Mock</a></li> -->
+                     </ul>
+                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >

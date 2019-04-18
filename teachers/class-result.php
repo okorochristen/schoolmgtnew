@@ -4,6 +4,7 @@
   ini_set('display_errors', 'on');
 ?>
 <?php if ( (isset($_SESSION['login'])) && (strlen($_SESSION['login']) >  0) ): ?>
+
     <?php if ( (isset($_REQUEST['class'])) && (isset($_REQUEST['session'])) && (isset($_REQUEST['term'])) && (isset($_REQUEST['class2'])) ):
       include 'includes/db.php';
       $class = $_REQUEST['class'];
