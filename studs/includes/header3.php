@@ -4,7 +4,7 @@
         <div class="card-heading bg-success text-white">
 	<!--<div class="container">-->
 		<div class="logo wow fadeInDown animated" data-wow-delay=".2s">
-			<h1 class="text-center">RHIMONI ACADEMY <span>Students Result Checking</span></h1>	
+			<h1 class="text-center">BEGINNERS' BASIC SCHOOLS <span>Students Result Checking</span></h1>	
 		</div>
 	<!--</div>-->
 </div> 
