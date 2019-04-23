@@ -6,12 +6,12 @@
               	  <p class="centered"><a href="profile.php"><img src="../images/1a.jpg" class="img-circle" width="60"></a></p>
                    <?php
                       $email = $_SESSION['login'];
-                      $query= $db->prepare("SELECT name from teachers where emailid = ?");
-                      $query->bind_param('s',$email);
-                      $query->execute();
-                      $query->bind_result($staffName);
-                      $query->fetch();
-                      $query->close();
+                    //   $query= $db->prepare("SELECT name from teachers where emailid = ?");
+                    //   $query->bind_param('s',$email);
+                    //   $query->execute();
+                    //   $query->bind_result($staffName);
+                    //   $query->fetch();
+                    //   $query->close();
 
                   ?>
               	  <h5 class="centered"><?php echo htmlentities($staffName); ?></h5>
