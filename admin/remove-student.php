@@ -17,12 +17,12 @@
       $q->fetch();
       $q->close();
 
-    //   if($_GET['school'] == 'primary'){
-    //     unlink("../studs/primary passports/$passport");
-    //   }
-    //   elseif ($_GET['school'] == 'secondary') {
-    //     unlink("../studs/secondary passports/$passport");
-    //   }
+      if($_GET['school'] == 'primary'){
+        unlink("../studs/primary passports/$passport");
+      }
+      elseif ($_GET['school'] == 'secondary') {
+        unlink("../studs/secondary passports/$passport");
+      }
 
       $q = $db->prepare("delete from accepted_students where regno = ?");
       $q->bind_param('s', $id);

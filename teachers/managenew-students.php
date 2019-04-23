@@ -15,69 +15,56 @@ else{
         $cl = 1;
     }
 	?>
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Admin Manage Students</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="images/cocinlogo.jpg" type="image/jpg">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="css/morris.css" type="text/css"/>
-<!-- Graph CSS -->
-<link href="../admin/css/font-awesome.css" rel="stylesheet">
-<!-- jQuery -->
-<script src="../admin/js/jquery-2.1.4.min.js"></script>
-<!-- //jQuery -->
-<!-- tables -->
-<link rel="stylesheet" type="text/css" href="../admin/css/table-style.css" />
-<link rel="stylesheet" type="text/css" href="../admin/css/basictable.css" />
-<script type="text/javascript" src="../admin/js/jquery.basictable.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-      $('#table').basictable();
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-      $('#table-breakpoint').basictable({
-        breakpoint: 768
-      });
+    <title>Teacher's Dashboard</title>
 
-      $('#table-swap-axis').basictable({
-        swapAxis: true
-      });
+    <!-- Bootstrap core CSS -->
+    <!--<link href="assets/css/bootstrap.css" rel="stylesheet">-->
+    
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+<link rel="shortcut icon" href="school.png" type="image/png">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
-      $('#table-force-off').basictable({
-        forceResponsive: false
-      });
+    <script src="assets/js/chart-master/Chart.js"></script>
 
-      $('#table-no-resize').basictable({
-        noResize: true
-      });
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-      $('#table-two-axis').basictable();
-
-      $('#table-max-height').basictable({
-        tableWrapper: true
-      });
-    });
-</script>
-<!-- //tables -->
-<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
-<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<!-- lined-icons -->
-<link rel="stylesheet" href="../admin/css/icon-font.min.css" type='text/css' />
-<!-- //lined-icons -->
-</head>
-<body>
-   <div class="page-container">
+  <body>
+	<section id="container" >
+			<?php include("includes/header.php");?>
+				<?php include("includes/sidebar.php");?>
+      <section id="main-content">
+          <section class="wrapper">
+					<div class="page-container">
    <!--/content-inner-->
 <div class="left-content">
 	   <div class="mother-grid-inner">
             <!--header start here-->
-				<?php include('includes/header.php');?>
 				     <div class="clearfix"> </div>
 				</div>
 <!--heder end here-->
@@ -92,8 +79,8 @@ else{
 					  <h2>
 							Manage Students
 							<span class="pull-right">
-								<a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=A" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
-					      <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=B" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
+								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
+					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=C" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "C"){echo 'active';} ?>">C</a>-->
 								<!--<a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=D" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "D"){echo 'active';} ?>">D</a>-->
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=E" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "E"){echo 'active';} ?>">E</a>				-->
@@ -101,15 +88,15 @@ else{
 						</h2>
 					    <table id="table">
 					        <div class="btn-group  pull-right">
-                                 <a href="manage-students.php?cl=1" class="btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
-                                 <a href="manage-students.php?cl=2" class="btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
-                                 <a href="manage-students.php?cl=3" class="btn btn-default <?php if($cl == 3){echo 'active';} ?>">Pre-K2</a>
-                                 <a href="manage-students.php?cl=4" class="btn btn-default <?php if($cl == 4){echo 'active';} ?>">Kindergaten</a>
-                                 <a href="manage-students.php?cl=5" class="btn btn-default <?php if($cl == 5){echo 'active';} ?>">Grade 1</a>
-                                 <a href="manage-students.php?cl=6" class="btn btn-default <?php if($cl == 6){echo 'active';} ?>">Grade 2</a>
-                                 <a href="manage-students.php?cl=7" class="btn btn-default <?php if($cl == 7){echo 'active';} ?>">Grade 3</a>
-                                 <a href="manage-students.php?cl=8" class="btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
-                                 <a href="manage-students.php?cl=9" class="btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
+                                 <a href="managenew-students.php?cl=1" class="btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
+                                 <a href="managenew-students.php?cl=2" class="btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
+                                 <a href="managenew-students.php?cl=3" class="btn btn-default <?php if($cl == 3){echo 'active';} ?>">Pre-K2</a>
+                                 <a href="managenew-students.php?cl=4" class="btn btn-default <?php if($cl == 4){echo 'active';} ?>">Kindergaten</a>
+                                 <a href="managenew-students.php?cl=5" class="btn btn-default <?php if($cl == 5){echo 'active';} ?>">Grade 1</a>
+                                 <a href="managenew-students.php?cl=6" class="btn btn-default <?php if($cl == 6){echo 'active';} ?>">Grade 2</a>
+                                 <a href="managenew-students.php?cl=7" class="btn btn-default <?php if($cl == 7){echo 'active';} ?>">Grade 3</a>
+                                 <a href="managenew-students.php?cl=8" class="btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
+                                 <a href="managenew-students.php?cl=9" class="btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
                             </div>
 						<thead>
 						  <tr>
@@ -126,10 +113,10 @@ else{
 						<?php
 						if (isset($_GET['cl2'])) {
 							$cl2 = htmlentities($_GET['cl2']);
-							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl' and class = '$cl2'";
+							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl' and class = '$cl2'";
 						}
 						else {
-							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl'";
+							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl'";
 						}
 						$query = $dbh -> prepare($sql);
 						//$query -> bindParam(':city', $city, PDO::PARAM_STR);
@@ -164,8 +151,7 @@ else{
 					  </table>
 					</div>
 			</div>
-<!-- script-for sticky-nav -->
-		<script>
+			<script>
 		$(document).ready(function() {
 			 var navoffeset=$(".header-main").offset().top;
 			 $(window).scroll(function(){
@@ -179,49 +165,41 @@ else{
 
 		});
 		</script>
-		<!-- /script-for sticky-nav -->
-<!--inner block start here-->
-<div class="inner-block">
 
-</div>
-<!--inner block end here-->
-<!--copy rights start here-->
-<?php include('includes/footer.php');?>
-<!--COPY rights end here-->
-</div>
-</div>
-  <!--//content-inner-->
-		<!--/sidebar-menu-->
-						<?php include('includes/sidebarmenu.php');?>
-							  <div class="clearfix"></div>
-							</div>
-							<script>
-							var toggle = true;
 
-							$(".sidebar-icon").click(function() {
-							  if (toggle)
-							  {
-								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-								$("#menu span").css({"position":"absolute"});
-							  }
-							  else
-							  {
-								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-								setTimeout(function() {
-								  $("#menu span").css({"position":"relative"});
-								}, 400);
-							  }
 
-											toggle = !toggle;
-										});
-							</script>
-<!--js -->
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
-   <!-- /Bootstrap Core JavaScript -->
 
+					</section>
+      </section>
+<?php //include("includes/footer.php");?>
+  </section>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>
+	<script src="assets/js/zabuto_calendar.js"></script>
 </body>
 </html>
 <?php } ?>
