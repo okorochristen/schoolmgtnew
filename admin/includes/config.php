@@ -4,6 +4,12 @@ define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','anyname');
+
+
+// define('DB_HOST','localhost');
+// define('DB_USER','beginnersbasicsc_db');
+// define('DB_PASS','ilovedaniel');
+// define('DB_NAME','beginnersbasicsc_db');
 // Establish database connection.
 try
 {

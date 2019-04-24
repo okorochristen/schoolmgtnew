@@ -1,4 +1,4 @@
- <header class="navbar navbar-expand-lg bg-primary">
+ <header class="navbar navbar-expand-lg bg-primary fixed-top">
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
@@ -11,3 +11,4 @@
             	</ul>
             </div>
         </header>
+<div width="100%" height="500px"></div>

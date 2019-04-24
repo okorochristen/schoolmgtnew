@@ -1,3 +1,25 @@
+<?php
+// DB credentials.
+$host = "localhost";
+$username = "root";
+$password = "password";
+$database = "scho";
+
+// $host = "localhost";
+// $username = "beginnersbasicsc_mgt";
+// $password = "ilovedaniel";
+// $database = "beginnersbasicsc_mgt";
+// Establish database connection.
+
+// Establish database connection.
+$db = new mysqli($host, $username, $password, $database);
+$connect_error = $db->connect_error;
+if ($connect_error != null) {
+	echo "database connection error ".$connect_error;
+	exit;
+}
+?>
+
 <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -36,17 +58,18 @@
                       </ul>
                   </li>
                   
-                  <!-- <li class="sub-menu">-->
-                  <!--    <a href="javascript:;" >-->
-                  <!--        <i class="fa fa-book"></i>-->
-                  <!--        <span>Add Students</span>-->
-                  <!--    </a>-->
-                  <!--    <ul class="sub">-->
-                          <!--<li><a  href="select-primary-class.php">Primary School</a></li>-->
-                  <!--        <li><a  href="addnew_student.php">Add Students</a></li>-->
-                          <!--<li><a  href="select-subject-mock.php">Junior & Senior Mock</a></li>-->
-                  <!--    </ul>-->
-                  <!--</li>-->
+                  <li class="sub-menu">-
+                     <a href="javascript:;" >
+                         <i class="fa fa-book"></i>
+                         <span>Students</span>
+                     </a>
+                     <ul class="sub">
+                          <!-- <li><a  href="select-primary-class.php">Primary School</a></li> -->
+                         <li><a href="addnew_student.php">Add Students</a></li>
+                         <li><a href="managenew-students.php">View Students</a></li>
+                          <!-- <li><a  href="select-subject-mock.php">Junior & Senior Mock</a></li> -->
+                     </ul>
+                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >

@@ -45,7 +45,7 @@
     }
   ?>
     <?php if($nu < 1):
-      $school = "primary";
+      $school = "secondary";
       $q2 = $db->prepare('select class from classes where id = ?');
       $q2->bind_param('s', $class);
       $q2->execute();
