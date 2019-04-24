@@ -70,11 +70,11 @@
             padding-left:0px
           }
         }
-        /* .smally{
-            margin:10px;
-            margin-top:80px;
+        .smally{
+            /* margin:10px; */
+            margin-top:70px;
             padding-left:250px
-          } */
+          }
       </style>
       </head>
       <body>
