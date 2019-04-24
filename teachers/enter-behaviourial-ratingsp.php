@@ -78,10 +78,10 @@
               <th>Assignment participation</th>
               <th>School act participation</th>
               <th>Neatness</th>
-              <th>Honesty</th>
-              <th>Self control</th>
+              <th>Truthfulness</th>
+              <th>SelfControl</th>
               <th>Relationship with others</th>
-              <th>Games</th>
+              <th>Games/sports</th>
               <th>Laboratory</th>
             </tr>
           </thead>
