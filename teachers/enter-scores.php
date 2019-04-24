@@ -132,8 +132,8 @@
               <th>REG NO</th>
               <th>NAME</th>
               <th>CA</th>
-              <!--<th>As 2</th>-->
-              <th>Home Work</th>
+              <th>Homework</th>
+              <!-- <th></th> -->
               <!--<th>Ts 2</th>-->
               <th>Exam</th>
               <th>TOTAL</th>
@@ -145,7 +145,7 @@
             <?php while ($q0->fetch()): ?>
             
               <?php
-                $q = $db->prepare('select as1, as2, ts1, ts2, exam, total from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?');
+                $q = $db->prepare('select as1, as2,exam, total from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?');
                 $q->bind_param('sssss', $session, $term, $class, $subject, $regno);
                 $q->execute();
                 $q->store_result();
@@ -155,33 +155,25 @@
                 <td><?php echo $regno; ?></td>
                 <td><?php echo $fname; ?></td>
                 <?php if ($no > 0):
-                  $q->bind_result($as1, $as2, $ts1, $ts2, $exam, $total);
+                  $q->bind_result($as1, $as2, $exam, $total);
                   $q->fetch();
                 ?>
                   <td><?php echo $as1; ?></td>
                   <td><?php echo $as2; ?></td>
-                  <td><?php echo $ts1; ?></td>
-                  <td><?php echo $ts2; ?></td>
                   <td><?php echo $exam; ?></td>
                   <td><?php echo $total; ?></td>
                   <td><a href="edit-score.php?class2=<?php echo $class2; ?>&session=<?php echo $session; ?>&term=<?php echo $term; ?>&class=<?php echo $class; ?>&subject=<?php echo $subject; ?>&regno=<?php echo $regno; ?>" class="btn btn-outline-info">Edit</a></td>
                   <td><a href="delete-score.php?class2=<?php echo $class2; ?>&session=<?php echo $session; ?>&term=<?php echo $term; ?>&class=<?php echo $class; ?>&subject=<?php echo $subject; ?>&regno=<?php echo $regno; ?>" class="btn btn-outline-danger">Delete</a></td>
                 <?php else: ?>
                   <td> <input type="number" id="<?php echo $regno; ?>as1" name="<?php echo $regno; ?>as1" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
+                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
+                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
                   <td> <input type="number" id="<?php echo $regno; ?>as2" name="<?php echo $regno; ?>as2" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
-                  <td> <input type="number" id="<?php echo $regno; ?>ts1" name="<?php echo $regno; ?>ts1" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
-                  <td> <input type="number" id="<?php echo $regno; ?>ts2" name="<?php echo $regno; ?>ts2" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
+                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
+                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
                   <td> <input type="number" id="<?php echo $regno; ?>exam" name="<?php echo $regno; ?>exam" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
+                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
+                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
                   <td> <input type="number" id="<?php echo $regno; ?>total" name="" value="0" placeholder="" class="form-control" readonly> </td>
                   <td colspan="2"></td>
                   <input type="hidden" name="term" value="<?php echo $term; ?>">
