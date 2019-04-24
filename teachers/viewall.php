@@ -18,52 +18,34 @@
     $q->store_result();
     $c = $q->num_rows;
   ?>
-      <!DOCTYPE HTML>
-      <html>
-      <head>
-      <title>Admin Result Checker</title>
-      <link rel="shortcut icon" href="images/cocinlogo.jpg" type="image/jpg">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Dashboard">
+      <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-      <!-- <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
-      <!-- Bootstrap Core CSS -->
-      <!-- <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' /> -->
+      <title>Enter Scores</title>
+        <!--<link rel="icon" href="school.png" type="image/png">-->
+      <!-- Bootstrap core CSS -->
+      <!--<link href="assets/css/bootstrap.css" rel="stylesheet">-->
       <!-- Font Awesome -->
-
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">-->
-
-      <!-- Custom CSS -->
-      <!-- <link href="css/style.css" rel='stylesheet' type='text/css' /> -->
-      <!-- <link rel="stylesheet" href="css/morris.css" type="text/css"/> -->
-      <!-- Graph CSS -->
-      <!-- <link href="css/font-awesome.css" rel="stylesheet"> -->
-      <!-- jQuery -->
-      <!-- <script src="js/jquery-2.1.4.min.js"></script> -->
-      <!-- //jQuery -->
-      <!-- tables -->
-      <!-- <link rel="stylesheet" type="text/css" href="../admin/css/table-style.css" /> -->
-      <!-- <link rel="stylesheet" type="text/css" href="../admin/css/basictable.css" /> -->
-      <!-- <script type="text/javascript" src="../admin/js/jquery.basictable.min.js"></script> -->
-      <!-- //tables -->
-      <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/> -->
-      <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-      <!-- lined-icons -->
-      <!-- <link rel="stylesheet" href="../admin/css/icon-font.min.css" type='text/css' /> -->
-      <!-- //lined-icons -->
-
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
       <!--external css-->
       <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-
-      <!-- Custom styles for this template -->
-      <!--<link href="assets/css/style.css" rel="stylesheet">-->
-      <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+<link rel="shortcut icon" href="school.png" type="image/png">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
       <script type="text/javascript" src="assets/js/calc.js"></script>
       <script type="text/javascript">
         function valid()
@@ -81,16 +63,32 @@
         .input-sm{
           border-radius: 0
         }
+        @media (max-width:600px){
+          .smally{
+            margin:10px;
+            margin-top:80px;
+            padding-left:0px
+          }
+        }
+        /* .smally{
+            margin:10px;
+            margin-top:80px;
+            padding-left:250px
+          } */
       </style>
       </head>
       <body>
-      <div class="container" style="margin:50px; padding-left:250px">
+        <div>
+          <?php include('includes/header.php');?>
+        <?php include('includes/sidebar.php');?>
+      </div>
+      <div class="container smally">
         <?php if (isset($_SESSION['msg'])): ?>
           <div class="alert alert-info">
             <p class="text-center"> <?php echo $_SESSION['msg']; ?> </p>
           </div>
         <?php endif; unset($_SESSION['msg']); ?>
-        <h3 class="text-center">List of subjects for which scores has been entered</h3>
+        <h3 class="text-center">Overall Performance of Students</h3>
         <div class="col-md-12">
           <?php if ($c > 0):
             $q->bind_result($subjectid);
@@ -223,7 +221,7 @@
 
      </div>
     </div>
-        <?php include('includes/sidebar.php');?>
+       
       </body>
     </html>
   <?php else:
