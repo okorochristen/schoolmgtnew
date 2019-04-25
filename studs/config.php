@@ -1,7 +1,7 @@
 <?php
 $mysql_hostname = "localhost";
 $mysql_user = "root";
-$mysql_password = "password";
+$mysql_password = "";
 $mysql_database = "scho";
 
 // $mysql_hostname = "localhost";

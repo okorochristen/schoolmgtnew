@@ -137,7 +137,6 @@
               <!--<th>Ts 2</th>-->
               <th>Exam</th>
               <th>TOTAL</th>
-              <th colspan="2">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -176,13 +175,10 @@
                   <td> <input type="number" id="<?php echo $regno; ?>ts1" name="<?php echo $regno; ?>ts1" placeholder="0" placeholder="" class="form-control"
                     onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
                     onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
-                  <td> <input type="number" id="<?php echo $regno; ?>ts2" name="<?php echo $regno; ?>ts2" placeholder="0" placeholder="" class="form-control"
+                  <td> <input type="number" id="<?php echo $regno; ?>ts2" name="<?php echo $regno; ?>ts2" placeholder="0" placeholder="" class="form-control" readonly
                     onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
                     onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
-                  <td> <input type="number" id="<?php echo $regno; ?>exam" name="<?php echo $regno; ?>exam" placeholder="0" placeholder="" class="form-control"
-                    onchange="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"
-                    onkeyup="calcTotal('<?php echo $regno."as1"; ?>','<?php echo $regno."as2"; ?>','<?php echo $regno."ts1"; ?>','<?php echo $regno."ts2"; ?>','<?php echo $regno."exam"; ?>','<?php echo $regno."total"; ?>')"> </td>
-                  <td> <input type="number" id="<?php echo $regno; ?>total" name="" value="0" placeholder="" class="form-control" readonly> </td>
+                  
                   <td colspan="2"></td>
                   <input type="hidden" name="term" value="<?php echo $term; ?>">
                   <input type="hidden" name="class" value="<?php echo $class; ?>">
