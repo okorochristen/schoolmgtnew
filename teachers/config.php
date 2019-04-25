@@ -1,9 +1,24 @@
 <?php
-$mysql_hostname = "localhost";
-$mysql_user = "root";
-$mysql_password = "";
-$mysql_database = "bbs";
-$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-mysql_select_db($mysql_database, $bd) or die("Could not select database");
+// DB credentials.
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PASS','');
+define('DB_NAME','bbs');
 
+
+// define('DB_HOST','localhost');
+// define('DB_USER','beginnersbasicsc_db');
+// define('DB_PASS','ilovedaniel');
+// define('DB_NAME','beginnersbasicsc_db');
+// Establish database connection.
+// Establish database connection.
+try
+{
+$dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+$db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+}
+catch (PDOException $e)
+{
+exit("Error: " . $e->getMessage());
+}
 ?>

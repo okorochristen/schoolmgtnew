@@ -76,7 +76,8 @@
                 <h3 class="text-center">Select from the dropdrown below to continue!</h3>        
           </div>
           <div class="card-body">
-              <form role="form" action="class-result.php" method="get">
+              <!-- <form role="form" action="class-result.php" method="get"> -->
+              <form role="form" action="viewall.php" method="get">
       <div class="form-group">
          <select class="form-control form-control-lg" name="class" required>
            <option value="">Select class</option>

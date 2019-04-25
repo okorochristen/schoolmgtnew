@@ -3,7 +3,7 @@
   error_reporting(E_ALL);
   ini_set('display_errors','on');
   include('includes/db.php');
-  if( strlen($_SESSION['alogin'])==0 ){
+  if( strlen($_SESSION['login'])==0 ){
     header('location:index.php');
   }
   else{
@@ -17,8 +17,8 @@
       $q->fetch();
       $q->close();
 
-      if($_GET['school'] == 'primary'){
-        unlink("../studs/primary passports/$passport");
+      if($_GET['school'] == 'secondary'){
+        unlink("../studs/secondary passports/$passport");
       }
     //   elseif ($_GET['school'] == "secondary") {
     //     unlink("../student-portal/secondary passports/$passport");
