@@ -207,7 +207,7 @@ if(isset($_POST['submit']))
     				<div class="row">
             <!-- <div class="clearfix"></div> -->
 						 
-    					<div class="col-9 offset-2" style="margin-top:-10px;">
+    					<div class="col-9 offset-2" style="margin-top:40px;">
         						<div class="card card-primary" >
 													<div class="card-header bg-primary text-white">
 														<h3 class="text-center">Add New Student</h3> 
@@ -301,7 +301,7 @@ if(isset($_POST['submit']))
 																							</div>
 																						</div>
 																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Accadmic Session</label>
+																							<label for="focusedinput" class="col-sm-3 control-label">Academic Session</label>
 																							<div class="col-sm-8">
 																								<select class="form-control1" name="session" required>
 																									<option>Select Session</option>
@@ -313,25 +313,25 @@ if(isset($_POST['submit']))
 																							</div>
 																						</div>
 																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Home Address</label>
+																							<label for="focusedinput" class="col-sm-4 control-label">Home Address</label>
 																							<div class="col-sm-8">
 																								<textarea class="form-control1" rows="5" cols="50" name="address" placeholder="Home Address" required></textarea>
 																							</div>
 																						</div>
 																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Name of Parent/Guardian</label>
+																							<label for="focusedinput" class="col-sm-4 control-label">Name of Parent/Guardian</label>
 																							<div class="col-sm-8">
 																								<input type="text" class="form-control1" name="parent" placeholder="Name of Parent/Guardian" required>
 																							</div>
 																						</div>
 																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Mobile Number of Parent/Guardian</label>
+																							<label for="focusedinput" class="col-sm-6 control-label">Mobile Number of Parent/Guardian</label>
 																							<div class="col-sm-8">
 																								<input type="number" class="form-control1" name="parent_num" placeholder="Mobile Number" required>
 																							</div>
 																						</div>
 																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Upload students passport</label>
+																							<label for="focusedinput" class="col-sm-4 control-label">Upload students passport</label>
 																							<div class="col-sm-8">
 																								<input type="file" class="form-control1" name="passport" placeholder="passport" required>
 																							</div>
