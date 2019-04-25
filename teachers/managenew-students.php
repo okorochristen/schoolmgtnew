@@ -53,6 +53,15 @@ else{
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <style>
+	  .smally{
+		  padding:0.98rem 1.78rem!important;
+		  margin:0.4rem!important;
+	  }
+	  .smalley{
+		  margin-top:0.9rem;
+	  }
+  </style>
 
   <body>
 	<section id="container" >
@@ -87,16 +96,16 @@ else{
 							</span>
 						</h2>
 					    <table id="table">
-					        <div class="btn-group  pull-right">
-                                 <a href="managenew-students.php?cl=1" class="btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
-                                 <a href="managenew-students.php?cl=2" class="btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
-                                 <a href="managenew-students.php?cl=3" class="btn btn-default <?php if($cl == 3){echo 'active';} ?>">Pre-K2</a>
-                                 <a href="managenew-students.php?cl=4" class="btn btn-default <?php if($cl == 4){echo 'active';} ?>">Kindergaten</a>
-                                 <a href="managenew-students.php?cl=5" class="btn btn-default <?php if($cl == 5){echo 'active';} ?>">Grade 1</a>
-                                 <a href="managenew-students.php?cl=6" class="btn btn-default <?php if($cl == 6){echo 'active';} ?>">Grade 2</a>
-                                 <a href="managenew-students.php?cl=7" class="btn btn-default <?php if($cl == 7){echo 'active';} ?>">Grade 3</a>
-                                 <a href="managenew-students.php?cl=8" class="btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
-                                 <a href="managenew-students.php?cl=9" class="btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
+					        <div class="smalley pull-right">
+                                 <a href="managenew-students.php?cl=1" class="smally btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
+                                 <a href="managenew-students.php?cl=2" class="smally btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
+                                 <a href="managenew-students.php?cl=3" class="smally btn btn-default <?php if($cl == 3){echo 'active';} ?>">Pre-K2</a>
+                                 <a href="managenew-students.php?cl=4" class="smally btn btn-default <?php if($cl == 4){echo 'active';} ?>">Kindergaten</a>
+                                 <a href="managenew-students.php?cl=5" class="smally btn btn-default <?php if($cl == 5){echo 'active';} ?>">Grade 1</a>
+                                 <a href="managenew-students.php?cl=6" class="smally btn btn-default <?php if($cl == 6){echo 'active';} ?>">Grade 2</a>
+                                 <a href="managenew-students.php?cl=7" class="smally btn btn-default <?php if($cl == 7){echo 'active';} ?>">Grade 3</a>
+                                 <a href="managenew-students.php?cl=8" class="smally btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
+                                 <a href="managenew-students.php?cl=9" class="smally btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
                             </div>
 						<thead>
 						  <tr>

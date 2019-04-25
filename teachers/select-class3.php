@@ -72,7 +72,7 @@
 </head>
 <body class="bglight bgwhite">
 <div class="container"> 
-    <div class="col-8 offset-2" style="margin-top: 40px">
+    <div class="col-sm-10 col-md-8 mr-auto ml-auto" style="width:90%; margin-top:40px">
         <div class="card card-primary">
             <div class="card-header bg-primary text-white">
                <h3 class="text-center">Select class to enter Behaviourial Ratings</h3> 

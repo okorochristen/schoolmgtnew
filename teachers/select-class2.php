@@ -69,7 +69,7 @@
 </head>
 <body class="bglight bgwhite">
 <div class="container">
-  <div class="col-8 offset-2" style="padding:60px">
+  <div class="col-sm-10 col-md-8 mr-auto ml-auto" style="padding:40px">
       <h2 class="text-center text-primary">View Class Results</h2>
       <div class="card">
           <div class="card-heading bg-primary text-white">

@@ -13,19 +13,21 @@
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="css/font-awesome.css">
 <!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="css/table-style.css" />
   <link rel="stylesheet" type="text/css" href="css/basictable.css" />
-  <script type="text/javascript" src="jquery.dataTables.js"></script>
+  <script type="text/javascript" src="dataTables/dataTables/css/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="sum().js"></script>
 <scr$(document).ready(function() {
@@ -53,8 +55,8 @@
 <?php include('includes/header3.php');?>
 
     
-    <div class="col-md-8 col-xs-12 offset-2">
-        <div class="card" style="margin-top: 40px">
+    <div class="col-md-8 col-xs-12 ml-auto mr-auto">
+        <div class="card" style="margin-top: 60px">
             <div class="card-heading bg-success text-white"><h2 class="text-center" style="padding-top: 20px">Result Checker</h2></div>
             <div class="card-body">
                 <section>
@@ -64,7 +66,6 @@
 						The pin you entered is invalid.
 					</div>
 				<?php endif; unset($_SESSION['irp'])?>
-
 				<form name="signup" method="post" action="result-script.php">
 					<div class="form-group col-sm-12">
 						<h2>Enter Your Pin</h2>
