@@ -10,7 +10,7 @@
       $class2 = $_REQUEST['class2'];
       $session = $_REQUEST['session'];
       $term = $_REQUEST['term'];
-      $school = "primary";
+      $school = "secondary";
 
       $q2 = $db->prepare('select class from pri_class where id = ?');
       $q2->bind_param('s', $class);

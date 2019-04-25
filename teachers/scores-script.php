@@ -44,7 +44,7 @@
         $q->bind_param('sss',$class,$class2,$session);
         $q->execute();
         $q->bind_result($regnos);
-        var_dump($q->execute());
+        // var_dump($q->execute());
         $q->store_result();
         $ns = $q->num_rows;
         $q1 = $db->prepare("select total from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
@@ -96,6 +96,7 @@
             else {
               $exam = $_POST["$k5"];
             }
+            
             $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
           }
           $ctotal += $stotal;
@@ -160,6 +161,7 @@
                 $exam = $_POST["$k5"];
               }
               $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
+
               $grade = grade($stotal);
               $q0->bind_param('sssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff);
               $q0->execute();
