@@ -55,11 +55,11 @@ else{
   </head>
   <style>
 	  .smally{
-		  padding:0.98rem 1.78rem!important;
+		  padding:0.58rem 1.28rem!important;
 		  margin:0.4rem!important;
 	  }
 	  .smalley{
-		  margin-top:0.9rem;
+		  margin-top:0.6rem;
 	  }
   </style>
 
@@ -88,14 +88,14 @@ else{
 					  <h2>
 							Manage Students
 							<span class="pull-right">
-								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
-					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
+								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
+					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=C" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "C"){echo 'active';} ?>">C</a>-->
 								<!--<a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=D" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "D"){echo 'active';} ?>">D</a>-->
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=E" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "E"){echo 'active';} ?>">E</a>				-->
 							</span>
 						</h2>
-					    <table id="table">
+					    <table id="table table-responsive" style="width:100%;">
 					        <div class="smalley pull-right">
                                  <a href="managenew-students.php?cl=1" class="smally btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
                                  <a href="managenew-students.php?cl=2" class="smally btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
@@ -114,7 +114,7 @@ else{
 							<th>Full Name</th>
 							<th>Regno</th>
 							<th>Class</th>
-							<th colspan="2" align="center">Admin Action</th>
+							<th colspan="2" align-content="center">Admin Action</th>
 
 						  </tr>
 						</thead>

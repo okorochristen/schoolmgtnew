@@ -205,14 +205,14 @@ if(isset($_POST['submit']))
           <section class="wrapper">
 
     				<div class="row">
-            <!-- <div class="clearfix"></div> -->
+            <!-- <div class="clearfix" style="margin-top:5px;"></div> -->
 						 
-    					<div class="col-9 offset-2" style="margin-top:40px;">
+    					<div class="col-9 offset-2">
         						<div class="card card-primary" >
 													<div class="card-header bg-primary text-white">
 														<h3 class="text-center">Add New Student</h3> 
 													</div>
-													<div class="card-body bg-white" height="800px">
+													<div class="card-body bg-white" height="700px">
 																			<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>: <span style="color:red">OOPS! </span><?php echo htmlentities($error); ?> </div><?php }
 															else if($msg){?><div class="succWrap bg-sucess"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 															<?php
@@ -250,52 +250,45 @@ if(isset($_POST['submit']))
 																						</div>
 																						<div class="form-group">
 																										<label class="col-sm-2 control-label">Date of Birth</label>
-																										<div class="col-sm-8">
-																											<input type="date" name="dob" class="form-control1" placeholder="Date of Birth" required>
-																										</div>
-																								
-																								
-																						</div>
+			<div class="col-sm-8">																										<input type="date" name="dob" class="form-control1" placeholder="Date of Birth" required>
+				</div>
+					</div>
+			<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">State of Origin</label>
+			<div class="col-sm-8">
+			<input type="text" class="form-control1" name="state" placeholder="State of Origin" required>
+					</div>
+					</div>
+				<div class="form-group">
+				<label for="focusedinput" class="col-sm-2 control-label">Local Government</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control1" name="lga" placeholder="Local Government" required>
+				</div>
+								</div>
+					<div class="form-group">
+					<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
+									<div class="col-sm-8">
+					<input type="text" class="form-control1" name="nationality" placeholder="Nationality" required>																					</div>
+					</div>
 																						<div class="form-group">
-																										<label for="focusedinput" class="col-sm-2 control-label">State of Origin</label>
-																										<div class="col-sm-8">
-																											<input type="text" class="form-control1" name="state" placeholder="State of Origin" required>
-																										</div>
-																						</div>
-																						<div class="form-group">
-																										<label for="focusedinput" class="col-sm-2 control-label">Local Government</label>
-																										<div class="col-sm-8">
-																											<input type="text" class="form-control1" name="lga" placeholder="Local Government" required>
-																										</div>
-																						</div>
-																						<div class="form-group">
-																								<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
-																								<div class="col-sm-8">
-																									<input type="text" class="form-control1" name="nationality" placeholder="Nationality" required>
-																								</div>
-																						</div>
-																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Religion</label>
-																							<div class="col-sm-8">
-																								<input type="text" class="form-control1" name="religion" placeholder="Religion" required>
-																							</div>
-																						</div>
-																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-2 control-label">Class</label>
-																							<div class="col-sm-8">
-																								<select class="form-control1" name="class_app" required id="sl" onchange="master()">
+			<label for="focusedinput" class="col-sm-2 control-label">Religion</label>
+						<div class="col-sm-8">
+						<input type="text" class="form-control1" name="religion" placeholder="Religion" required>
+							</div>
+						</div>
+								<div class="form-group">
+							<label for="focusedinput" class="col-sm-2 control-label">Class</label>
+							<div class="col-sm-8">																		<select class="form-control1" name="class_app" required id="sl" onchange="master()">
 																									<option value="">Select Class</option>
-																									<?php while($q->fetch()): ?>
-																										<option value="<?php echo $classid; ?>"><?php echo $class; ?></option>
-																									<?php endwhile; $q->close(); $db->close(); ?>
-																								</select>
-																							</div>
-																						</div>
-																						<div class="form-group" id="myd">
-																							<div class="col-md-8">
-																								<label class="radio-inline" id="l1"><input id="rd1" type="radio" name="cl" required value="A"> A </label>&nbsp&nbsp&nbsp&nbsp&nbsp
-																								<label class="radio-inline" id="l2"><input id="rd2" type="radio" name="cl"  required value="B"> B </label>&nbsp&nbsp&nbsp&nbsp&nbsp
-																								<!--<label class="radio-inline" id="l2"><input id="rd2" type="radio" name="cl"  required value="C"> C </label>&nbsp&nbsp&nbsp&nbsp&nbsp-->
+									<?php while($q->fetch()): ?>																	<option value="<?php echo $classid; ?>"><?php echo $class; ?></option>
+											<?php endwhile; $q->close(); $db->close(); ?>													</select>
+														</div>
+														</div>
+												<div class="form-group" id="myd">
+													<div class="col-md-8">
+											<label class="radio-inline" id="l1"><input id="rd1" type="radio" name="cl" required value="A"> A </label>&nbsp&nbsp&nbsp&nbsp&nbsp
+				<label class="radio-inline" id="l2"><input id="rd2" type="radio" name="cl"  required value="B"> B </label>&nbsp&nbsp&nbsp&nbsp&nbsp
+																						
 																								<!--<label class="radio-inline" id="l2"><input id="rd2" type="radio" name="cl"  required value="D"> D </label>&nbsp&nbsp&nbsp&nbsp&nbsp-->
 																			<!--          <label class="radio-inline" id="l3"><input id="rd3" type="radio" name="cl"  required value="E"> E </label>-->
 																							</div>
@@ -305,19 +298,19 @@ if(isset($_POST['submit']))
 																							<div class="col-sm-8">
 																								<select class="form-control1" name="session" required>
 																									<option>Select Session</option>
-																									<option value="<?php $m = date('Y'); $sy = $m + 1; echo $m.'/'.$sy; ?>"><?php echo $m.'/'.$sy; ?></option>
-																								<?php //if( date('m') == 1 ): ?>
-																									<option value="<?php $py = $m - 1; echo $py.'/'.$m; ?>"><?php echo $py.'/'.$m;?></option>
+										<option value="<?php $m = date('Y'); $sy = $m + 1; echo $m.'/'.$sy; ?>">
+										<?php echo $m.'/'.$sy; ?></option>
+										<?php //if( date('m') == 1 ): ?>
+									<option value="<?php $py = $m - 1; echo $py.'/'.$m; ?>"><?php echo $py.'/'.$m;?></option>
 																								<?php //endif; ?>
-																								</select>
-																							</div>
-																						</div>
-																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-4 control-label">Home Address</label>
-																							<div class="col-sm-8">
-																								<textarea class="form-control1" rows="5" cols="50" name="address" placeholder="Home Address" required></textarea>
-																							</div>
-																						</div>
+												</select>
+												</div>																						</div>
+										<div class="form-group">
+									<label for="focusedinput" class="col-sm-4 control-label">Home Address</label>
+										<div class="col-sm-6">
+										<textarea class="form-control1" style="height:120px; width:200px;" name="address" placeholder="Home Address" required></textarea>
+								</div>
+										</div>
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-4 control-label">Name of Parent/Guardian</label>
 																							<div class="col-sm-8">
