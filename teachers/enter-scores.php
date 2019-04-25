@@ -145,7 +145,7 @@
               <!--<th>Ts 2</th>-->
               <th>Exam</th>
               <th>TOTAL</th>
-              <th colspan="2">Action</th>
+              <th colspan="2"></th>
             </tr>
           </thead>
           <tbody>

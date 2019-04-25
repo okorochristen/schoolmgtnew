@@ -61,6 +61,23 @@ else{
 	  .smalley{
 		  margin-top:0.9rem;
 	  }
+	  /* .small-head{
+		  height:100px;
+		  background-color:#ff4a43;
+		  padding:20px 50px;
+	  } */
+	  .smalley-table{
+		  width:100%;
+		 
+	  }
+	  .smalley-row{
+		  padding:100px 90px;
+		  height:45px;
+	  }
+	  .smalley-h{
+		color:#fff;
+		font-weight:bold;
+	  }
   </style>
 
   <body>
@@ -95,7 +112,7 @@ else{
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=E" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "E"){echo 'active';} ?>">E</a>				-->
 							</span>
 						</h2>
-					    <table id="table">
+					    <table id="table" class="table table-striped smalley-table">
 					        <div class="smalley pull-right">
                                  <a href="managenew-students.php?cl=1" class="smally btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
                                  <a href="managenew-students.php?cl=2" class="smally btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
@@ -107,14 +124,14 @@ else{
                                  <a href="managenew-students.php?cl=8" class="smally btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
                                  <a href="managenew-students.php?cl=9" class="smally btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
                             </div>
-						<thead>
-						  <tr>
-						  <th>Passport</th>
-						  <th>S/No</th>
-							<th>Full Name</th>
-							<th>Regno</th>
-							<th>Class</th>
-							<th colspan="2" align="center">Admin Action</th>
+						<thead class="thead-dark">
+						  <tr class="smalley-row">
+						  <th class="smalley-h">Passport</th>
+						  <th class="smalley-h">S/No</th>
+							<th class="smalley-h">Full Name</th>
+							<th class="smalley-h">Regno</th>
+							<th class="smalley-h">Class</th>
+							<th class="smalley-h" colspan="2" align="center">Admin Action</th>
 
 						  </tr>
 						</thead>

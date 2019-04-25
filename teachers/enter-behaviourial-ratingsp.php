@@ -59,12 +59,12 @@
       </style>
     </head>
 <body class="bglight bgwhite">
-<div class="container-fluid" style="margin-top: 60px">
+<div class="container-fluid" style="margin-top: 30px">
 <div class="col-12">
 <div class="card" style="margin-bottom: 60px">
 <div class="card-heading bg-primary text-center text-white">
     <?php if ($q0->num_rows > 0): ?>
-      <h3 style="text-transform: uppercase;"> Enter <?php echo $cl." ".$class2; ?> students behaviourial ratings.</h3><br><br>
+      <h3 style="text-transform: uppercase;padding-top:20px;"> Enter <?php echo $cl." ".$class2; ?> students behaviourial ratings.</h3><br><br>
       <?php $q0->bind_result($regno, $fname) ?>
 </div>
 <div class="card-body">
