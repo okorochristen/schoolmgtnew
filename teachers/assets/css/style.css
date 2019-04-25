@@ -18,6 +18,10 @@ body {
     margin: 0px !important;
     font-size:13px;
 }
+.w3l-table-info h2,.agile-tables h3 {
+    font-size: 28px;
+    color: #1b93e1;
+}
 
 ul li {
     list-style: none;

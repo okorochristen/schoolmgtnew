@@ -62,7 +62,31 @@ else{
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+<style>
+.small-bread{
+color:#000;
+font-weight:1rem;
+}
+.w3l-table-info h2,.agile-tables h3 {
+    font-size: 28px;
+    color: #1b93e1;
+}
+li.breadcrumb-item i.fa.fa-angle-right {
+    font-size: 25px;
+    padding: 0 8px;
+    color: #000;
+	vertical-align: middle;
+}
+.breadcrumb > li {
+    color: #e74c3c ! important;
+    font-size: 16px ! important;
+    vertical-align: middle ! important;
+}
+tr:nth-child(even) {
+  background-color: #f3faff;
+}
 
+</style>
   <body>
   <section id="container" >
 <?php include("includes/header.php");?>
@@ -99,20 +123,20 @@ else{
 	$q->close();
 	$db->close();
 ?>
-<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>View Secondary Students</li>
+<ol class="breadcrumb" style="margin-top:30px;">
+		<li class="breadcrumb-item" style="font-size:1rem;"><a style="color:blue" href="dashboard.php">Home</a><i class="fa fa-angle-right" style="color:#000;"></i>View Secondary Students</li>
 </ol>
-<div class="agile-grids">
+<div class="agile-grids" style="background-color:#fff;margin-top:30px;">
 				<!-- tables -->
-			<div class="row">
+			<div class="container row">
 
-				<div class="agile-tables col-md-8">
+				<div class="agile-tables col-md-8" style="padding:1rem;">
 
 					<div class="w3l-table-info">
 
 						<h2>STUDENT INFORMATION</h2>
-							<table>
-									<a href="managenew-students.php" class="btn btn-warning" style="margin-right:25px">Back</a><a href="remove-student.php?id=<?php echo $id; ?>&school=secondary" class="btn btn-warning" style="background-color:red; color:white;">Remove</a>
+							<table class="table small-bread">
+									<a href="managenew-students.php" class="btn" style="margin-right:25px;background-color:#e0a800;">Back</a><a href="remove-student.php?id=<?php echo $id; ?>&school=secondary" class="btn btn-danger" style="background-color:red; color:white;">Remove</a>
 						<tbody>
 							<tr>
 								<td>NAME:</td>
@@ -167,7 +191,7 @@ else{
 				<img id="psp" alt="passport" src = "../studs/secondary passports/<?php echo htmlentities($passport); ?>" class="img-responsive img-thumbnail"/>
 				<div class="col-md-6">
 					<script type="text/javascript" src="js/passport.js"></script>
-					<form class="" action="change-passport.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+					<form class="form-group" action="change-passport.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="school" value="sec">
 						<input type="hidden" name="in" value="<?php echo $passport; ?>">
 						<input type="hidden" name="name" value="<?php echo $name; ?>">
