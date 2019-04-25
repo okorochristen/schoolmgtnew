@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
 			$q = $dbh->prepare("INSERT into years (year) values ('$year')");
 			$q->execute();
 		}
-		$school = "secondary";
+		$school = "primary";
 		$regno = $_POST['regno'];
 		// var_dump($regno);
 // 		$regno = genReg($n);

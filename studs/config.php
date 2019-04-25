@@ -1,8 +1,8 @@
 <?php
 $mysql_hostname = "localhost";
 $mysql_user = "root";
-$mysql_password = "password";
-$mysql_database = "scho";
+$mysql_password = "oduduabasi";
+$mysql_database = "schoolman";
 
 // $mysql_hostname = "localhost";
 // $mysql_user = "beginnersbasicsc_mgt";

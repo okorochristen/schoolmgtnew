@@ -113,10 +113,10 @@ else{
 						<?php
 						if (isset($_GET['cl2'])) {
 							$cl2 = htmlentities($_GET['cl2']);
-							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl' and class = '$cl2'";
+							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl' and class = '$cl2'";
 						}
 						else {
-							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl'";
+							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl'";
 						}
 						$query = $dbh -> prepare($sql);
 						//$query -> bindParam(':city', $city, PDO::PARAM_STR);
