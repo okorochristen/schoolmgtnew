@@ -517,6 +517,11 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     };
     }
 
+    @media screen and (min-width: 480px) {
+        #leftsidebar {width: 200px; float: left;}
+        #main {margin-left:216px;}
+    }
+
 .dropdown-menu.extended li p {
     background-color: #F1F2F7;
     color: #666666;

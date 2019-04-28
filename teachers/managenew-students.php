@@ -55,11 +55,11 @@ else{
   </head>
   <style>
 	  .smally{
-		  padding:0.98rem 1.78rem!important;
+		  padding:0.58rem 1.28rem!important;
 		  margin:0.4rem!important;
 	  }
 	  .smalley{
-		  margin-top:0.9rem;
+		  margin-top:0.6rem;
 	  }
 	  /* .small-head{
 		  height:100px;
@@ -105,14 +105,15 @@ else{
 					  <h2>
 							Manage Students
 							<span class="pull-right">
-								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
-					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
+								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
+					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=C" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "C"){echo 'active';} ?>">C</a>-->
 								<!--<a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=D" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "D"){echo 'active';} ?>">D</a>-->
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=E" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "E"){echo 'active';} ?>">E</a>				-->
 							</span>
 						</h2>
-					    <table id="table" class="table table-striped smalley-table">
+					    <table id="table" class="table-responsive table table-striped smalley-table">
+					    
 					        <div class="smalley pull-right">
                                  <a href="managenew-students.php?cl=1" class="smally btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
                                  <a href="managenew-students.php?cl=2" class="smally btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
@@ -139,10 +140,10 @@ else{
 						<?php
 						if (isset($_GET['cl2'])) {
 							$cl2 = htmlentities($_GET['cl2']);
-							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl' and class = '$cl2'";
+							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl' and class = '$cl2'";
 						}
 						else {
-							$sql = "SELECT * from accepted_students where school = 'secondary' and current_class = '$cl'";
+							$sql = "SELECT * from accepted_students where school = 'primary' and current_class = '$cl'";
 						}
 						$query = $dbh -> prepare($sql);
 						//$query -> bindParam(':city', $city, PDO::PARAM_STR);
