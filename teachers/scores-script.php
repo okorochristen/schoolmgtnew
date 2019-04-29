@@ -37,6 +37,10 @@
         $class2 = $_REQUEST['class2'];
         $session = $_REQUEST['session'];
         $subject = $_REQUEST['subject'];
+        $lastterm=$_REQUEST['term']-1;
+        if($lastterm==0){
+          $lastterm=1;
+        }
         $ctotal = 0;
         $regs = array();
         $c = 0;
@@ -48,18 +52,27 @@
         $q->store_result();
         $ns = $q->num_rows;
         $q1 = $db->prepare("select total from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
+        $q4=$db->prepare('select cs from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         while ($q->fetch()) {
           $regs[$c] = $regnos;
           $c++;
           $q1->bind_param("ssssss", $regnos, $session, $term, $class, $subject, $class2);
           $q1->execute();
           $q1->store_result();
+          $q4->bind_param("ssssss", $regnos, $session, $lastterm, $class, $subject, $class2);
+          $q4->execute();
+          $q4->store_result();
           $n = $q1->num_rows;
           if ($n > 0) {
             $q1->bind_result($stotal);
             $q1->fetch();
+            $q4->bind_result($lts);
+            $q4->fetch();
+            
           }
           else {
+            $q4->bind_result($lts);
+            $q4->fetch();
             $stotal = 0;
             $k1 = $regnos."as1";
             if ( (empty($_POST["$k1"])) || (!preg_match("/^[0-9]*$/",$_POST["$k1"])) ) {
@@ -97,23 +110,36 @@
               $exam = $_POST["$k5"];
             }
             
+            
+            
             $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
+            if($lts!=null){
+              
+              $cs=$stotal+$lts/2;
+            }else{
+              
+              $cs=$total;
+              $lts=$cs;
+            }
+            
           }
           $ctotal += $stotal;
         }
         $q->free_result();
         $q->close();
         $caverage = $ctotal / $ns;
-
+        // var_dump($lts);
         //update class average of students whose scores have been Entered before now.
-        $q1 = $db->prepare('update scores set class_average = ? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
-        $q1->bind_param('ssssss', $caverage, $session, $term, $class, $subject, $class2);
+        $q1 = $db->prepare('update scores set class_average = ?,lts=?,cs=? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
+        $q1->bind_param('ssssssss', $caverage,$lts,$cs,$session, $term, $class, $subject, $class2);
         $q1->execute();
         $q1->close();
         $q1 = $db->prepare('select count(total) from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
-        $q0 = $db->prepare('insert into scores (regno, session, term, class, class2, subject, as1, as2, ts1, ts2, exam, total, grade, class_average, staffid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        
+        
+        $q0 = $db->prepare('INSERT into scores (regno, session, term, class, class2, subject, as1, as2, ts1, ts2, exam, total, grade, class_average, staffid,lts,cs) values (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)');
+        // var_dump($q0);
         $al = count($regs);
-
         for ($i = 0; $i < $al; $i++) {
           $regnos = $regs[$i];
           $q1->bind_param('ssssss', $regnos, $session, $term, $class, $subject, $class2);
@@ -161,11 +187,21 @@
                 $exam = $_POST["$k5"];
               }
               $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
+              if($lts!=null){
+                $cs=$stotal+$lts/2;
+              }else{
 
-              $grade = grade($stotal);
-              $q0->bind_param('sssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff);
+                $cs=$stotal;
+                $lts=$cs;
+              } 
+              $grade = grade($cs);
+              var_dump($cs);
+              
+              $q0->bind_param('sssssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff,$lts,$cs);
               $q0->execute();
+              
               $q0->store_result();
+              // $q5->bind_param('ssssssssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff,$ltscs);
             }
           }
         }
