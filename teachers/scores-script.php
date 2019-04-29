@@ -118,8 +118,8 @@
               $cs=$stotal+$lts/2;
             }else{
               
-              $cs=$total;
-              $lts=$cs;
+              $cs=$stotal;
+              $lts=$stotal;
             }
             
           }
@@ -130,7 +130,7 @@
         $caverage = $ctotal / $ns;
         // var_dump($lts);
         //update class average of students whose scores have been Entered before now.
-        $q1 = $db->prepare('update scores set class_average = ?,lts=?,cs=? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
+        $q1 = $db->prepare('update scores set class_average = ? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         $q1->bind_param('ssssssss', $caverage,$lts,$cs,$session, $term, $class, $subject, $class2);
         $q1->execute();
         $q1->close();
@@ -195,7 +195,7 @@
                 $lts=$cs;
               } 
               $grade = grade($cs);
-              var_dump($cs);
+              // var_dump($cs);
               
               $q0->bind_param('sssssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff,$lts,$cs);
               $q0->execute();
