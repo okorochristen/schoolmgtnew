@@ -10,7 +10,7 @@
       $class2 = $_REQUEST['class2'];
       $session = $_REQUEST['session'];
       $term = $_REQUEST['term'];
-      $school = "primary";
+      $school = "secondary";
 
       $q2 = $db->prepare('select class from pri_class where id = ?');
       $q2->bind_param('s', $class);
@@ -59,12 +59,12 @@
       </style>
     </head>
 <body class="bglight bgwhite">
-<div class="container-fluid" style="margin-top: 60px">
+<div class="container-fluid" style="margin-top: 30px">
 <div class="col-12">
 <div class="card" style="margin-bottom: 60px">
 <div class="card-heading bg-primary text-center text-white">
     <?php if ($q0->num_rows > 0): ?>
-      <h3 style="text-transform: uppercase;"> Enter <?php echo $cl." ".$class2; ?> students behaviourial ratings.</h3><br><br>
+      <h3 style="text-transform: uppercase;padding-top:20px;"> Enter <?php echo $cl." ".$class2; ?> students behaviourial ratings.</h3><br><br>
       <?php $q0->bind_result($regno, $fname) ?>
 </div>
 <div class="card-body">
@@ -78,10 +78,10 @@
               <th>Assignment participation</th>
               <th>School act participation</th>
               <th>Neatness</th>
-              <th>Honesty</th>
-              <th>Self control</th>
+              <th>Truthfulness</th>
+              <th>SelfControl</th>
               <th>Relationship with others</th>
-              <th>Games</th>
+              <th>Games/sports</th>
               <th>Laboratory</th>
             </tr>
           </thead>

@@ -96,7 +96,7 @@ body{
   <body>
       
 <div class="container-fluid" id="container-fluid">
-    <div class="col-md-6 offset-md-3" style="margin-top:60px">
+    <div class="col-md-6 offset-md-3 col-sm-12" style="margin-top:60px">
     <div class="card">
         <div class="card-header bg-primary text-white">
           <h2 class="text-center">TEACHER LOGIN</h2>
@@ -104,20 +104,20 @@ body{
         <div class="card-body">
         <form method="post">
     	<div class="form-group">
-    		<div class="col-sm-6 col-sm-12 col-md-12">
+    		<div class="col-sm-12 col-sm-12 col-md-12">
     			<input type="text" name="username" autofocus class="form-control form-control-lg" id="inputEmail3" placeholder="Username" autofocus="on">
     		</div>
-    	</div>
+    	</div><br>
     	<div class="form-group">
     		<div class="col-sm-6 col-sm-12 col-md-12">
     			<input type="password" name="password" class="form-control form-control-lg" id="inputPassword3" placeholder="Password">
     		</div>
-    	</div>
+    	</div><br>
      
           <div class="form-group">
              <div class="col-sm-6 col-sm-12 col-md-12">
                 <button type="submit" name="submit" class="btn btn-outline-primary">Sign in</button>
-                <a class="btn btn-outline-primary" href="beginnersbasicschools.com" style="margin-left: 20px">Go to Home</a>
+                <a class="btn btn-outline-primary" href="beginnersbasicschools.com">Go to Home</a>
              </div>
           </div>
     </form>

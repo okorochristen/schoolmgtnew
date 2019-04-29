@@ -12,7 +12,7 @@
         $class = $_REQUEST['class'];
         $class2 = $_REQUEST['class2'];
         $session = $_REQUEST['session'];
-        $school = "primary";
+        $school = "secondary";
 
         $regs = array();
         $c = 0;

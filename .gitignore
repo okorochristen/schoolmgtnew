@@ -5,3 +5,10 @@
 /opt/lampp/htdocs/schoolmgtnew/studs/includes/db.php
 /opt/lampp/htdocs/schoolmgtnew/teachers/config.php
 /opt/lampp/htdocs/schoolmgtnew/teachers/includes/db.php
+admin/includes/config.php
+admin/includes/db.php
+studs/includes/config.php
+studs/includes/db.php
+studs/config.php
+teachers/includes/db.php
+teachers/config.php

@@ -79,7 +79,9 @@ $msg="Student's Information Updated Successfully";
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+<style>
+	
+</style>
   <body>
 	<section id="container" >
 <?php include("includes/header.php");?>

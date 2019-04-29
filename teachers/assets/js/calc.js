@@ -20,7 +20,19 @@ function calcTotal(as1, as2, ts1, total) {
     var rts1 = Number(document.getElementById(ts1).value);
   }
 
-  
+  // if (document.getElementById(ts2).value == "") {
+  //   var rts2 = 0;
+  // }
+  // else {
+  //   var rts2 = Number(document.getElementById(ts2).value);
+  // }
+
+  // if (document.getElementById(exam).value == "") {
+  //   var rexam = 0;
+  // }
+  // else {
+  //   var rexam = Number(document.getElementById(exam).value);
+  // }
 
   var rtotal = ras1 + ras2 + rts1;
   document.getElementById(total).value = rtotal;
@@ -30,6 +42,8 @@ function calcTotal(as1, as2, ts1, total) {
     document.getElementById(as1).value = 0;
     document.getElementById(as2).value = 0;
     document.getElementById(ts1).value = 0;
+    // document.getElementById(ts2).value = 0;
+    // document.getElementById(exam).value = 0;
     document.getElementById(total).value = 0;
   }
 }

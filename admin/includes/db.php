@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $database = "scho";
 
+
 // $host = "localhost";
 // $username = "beginnersbasicsc_mgt";
 // $password = "ilovedaniel";

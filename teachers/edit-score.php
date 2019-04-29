@@ -11,14 +11,14 @@
     $class = $_GET['class'];
     $class2 = $_GET['class2'];
 
-    $q = $db->prepare('select as1, as2, ts1, ts2, exam, total from scores where session = ? and term = ? and class = ? and subject = ? and regno = ? and class2 = ?');
+    $q = $db->prepare('select as1, as2, exam, total from scores where session = ? and term = ? and class = ? and subject = ? and regno = ? and class2 = ?');
     $q->bind_param('ssssss', $session, $term, $class, $subjectid, $regno, $class2);
     $q->execute();
     $q->store_result();
     $no = $q->num_rows;
   ?>
   <?php if ($no > 0):
-    $q->bind_result($as1, $as2, $ts1, $ts2, $exam, $total);
+    $q->bind_result($as1, $as2, $exam, $total);
     $q->fetch();
     $q->close();
 
@@ -77,8 +77,8 @@
       </head>
       <body class="bglight">
 
-        <section class="bglight  borderbottom" style="margin-top: 40px">
-          <div class="col-8 offset-2">
+        <section class="bglight  borderbottom" style="margin-top: 150px">
+          <div class="col-sm-10 col-lg-8 mr-auto ml-auto">
               <div class="card">
                   <div class="card-heading bg-primary text-white text-center">
                       <div class="col-sm-12 form-group">
@@ -102,31 +102,22 @@
                       <div class="container">
                           <div class="row">
                                <div class="form-group col-sm-6">
-                                   <label>Ass1</label>
-                              <input type="number" class="form-control input-sm" value="<?php echo $as1; ?>" name="as1" placeholder="Assignment 1" id="as1" onchange="calcTotal('as1','as2','ts1','ts2','exam','total')" onkeyup="calcTotal('as1','as2','ts1','ts2','exam','total')" required>
+                                   <label>CA</label>
+                              <input type="number" class="form-control input-sm" value="<?php echo $as1; ?>" name="as1" placeholder="CA" id="as1" onchange="calcTotal('as1','as2','exam','total')" onkeyup="calcTotal('as1','as2','exam','total')" required>
                           </div>
                           <div class="form-group col-sm-6">
-                              <label>Ass2</label>
-                              <input type="number" class="form-control input-sm" value="<?php echo $as2; ?>" name="as2" placeholder="Assignment 2" id="as2"  onchange="calcTotal('as1','as2','ts1','ts2','exam','total')" onkeyup="calcTotal('as1','as2','ts1','ts2','exam','total')" required>
+                              <label>Assignment</label>
+                              <input type="number" class="form-control input-sm" value="<?php echo $as2; ?>" name="as2" placeholder="Assignment" id="as2"  onchange="calcTotal('as1','as2','exam','total')" onkeyup="calcTotal('as1','as2','exam','total')" required>
                           </div>
                           </div>
-                         <div class="row">
-                             <div class="form-group col-sm-6">
-                                 <label>Test1</label>
-                              <input type="number" class="form-control input-sm" value="<?php echo $ts1; ?>" name="ts1" placeholder="Test 1" id="ts1"  onchange="calcTotal('as1','as2','ts1','ts2','exam','total')" onkeyup="calcTotal('as1','as2','ts1','ts2','exam','total')" required>
-                          </div>
-                          <div class="form-group col-sm-6">
-                              <label>Test2</label>
-                              <input type="number" class="form-control input-sm" value="<?php echo $ts2; ?>" name="ts2" placeholder="Test 2" id="ts2" onchange="calcTotal('as1','as2','ts1','ts2','exam','total')" onkeyup="calcTotal('as1','as2','ts1','ts2','exam','total')" required>
-                          </div>
-                         </div>
+                         
                           <div class="row">
                               <div class="form-group col-sm-6">
                                   <label>Exams</label>
-                              <input type="number" class="form-control input-sm" value="<?php echo $exam; ?>" name="exam" placeholder="Exams Score" id="exam" onchange="calcTotal('as1','as2','ts1','ts2','exam','total')" onkeyup="calcTotal('as1','as2','ts1','ts2','exam','total')" required>
+                              <input type="number" class="form-control input-sm" value="<?php echo $exam; ?>" name="exam" placeholder="Exams Score" id="exam" onchange="calcTotal('as1','as2','exam','total')" onkeyup="calcTotal('as1','as2','exam','total')" required>
                           </div>
                           <div class="form-group col-sm-6">
-                              <laebl>Total</laebl>
+                              <label>Total</label>
                               <input type="number" class="form-control input-sm" value="<?php echo $total; ?>" name="total" placeholder="Total Score" readonly id="total">
                           </div>
                           </div>
