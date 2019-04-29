@@ -80,7 +80,18 @@ $msg="Student's Information Updated Successfully";
     <![endif]-->
   </head>
 <style>
-	
+	input{
+padding:7px;
+	}
+	select{
+padding:7px;
+	}
+label{
+font-size:20px;
+}
+	body{
+		background-color:#fff;
+	}
 </style>
   <body>
 	<section id="container" >
@@ -99,14 +110,14 @@ $msg="Student's Information Updated Successfully";
 				</div>
 <!--heder end here-->
 	<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i> Update Student's Information </li>
+                <li class="breadcrumb-item" style="font-size:20px; color:#e74c3c;"><a href="dashboard.php" style="font-size:20px;">Home &nbsp</a><i class="fa fa-angle-right" style="font-size:20px; color:black;"></i>&nbsp Update Student's Information </li>
             </ol>
 		<!--grid-->
  	<div class="grid-form">
 
 <!---->
   <div class="grid-form1">
-  	       <h3>Update Student's Information</h3>
+  	       <h3 style="color:#008de7">Update Student's Information</h3>
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 					else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
   	         		<div class="tab-content">
@@ -129,40 +140,40 @@ foreach($results as $result)
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Full Name</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="fname"  placeholder="Full Name" value="<?php echo htmlentities($result->fname);?>" required>
+										<input type="text" class="form-control1 col-sm-12" name="fname"  placeholder="Full Name" value="<?php echo htmlentities($result->fname);?>" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Gender</label>
 									<div class="col-sm-8">
-										<input type="text"  name="gender" value="<?php echo htmlentities($result->gender);?>" class="form-control1 ">
+										<input type="text"  name="gender" value="<?php echo htmlentities($result->gender);?>" class="form-control1 col-sm-12">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Date of Birth</label>
 									<div class="col-sm-8">
-										<input type="date" class="form-control1" name="dob" value="<?php echo htmlentities($result->dob);?>" required>
+										<input type="date" class="form-control1 col-sm-12" name="dob" value="<?php echo htmlentities($result->dob);?>" required>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">State of Origin</label>
 									<div class="col-sm-8">
-										<input type="text" name="state" placeholder="State of Origin" class="form-control1" value="<?php echo htmlentities($result->state); ?>">
+										<input type="text" name="state" placeholder="State of Origin" class="form-control1 col-sm-12" value="<?php echo htmlentities($result->state); ?>">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Local Government</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="lga"  placeholder="Local Government" value="<?php echo htmlentities($result->lga);?>" required>
+										<input type="text" class="form-control1 col-sm-12" name="lga"  placeholder="Local Government" value="<?php echo htmlentities($result->lga);?>" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
 									<div class="col-sm-8">
-										<input type="text" name="state" placeholder="State of Origin" class="form-control1" value="<?php echo htmlentities($result->nationality); ?>">
+										<input type="text" name="state" placeholder="State of Origin" class="form-control1 col-sm-12" value="<?php echo htmlentities($result->nationality); ?>">
 									</div>
 								</div>
 								<div class="form-group">
@@ -172,7 +183,7 @@ foreach($results as $result)
 								  ?>
 									<label for="focusedinput" class="col-sm-2 control-label">Class</label>
 									<div class="col-sm-8">
-										<select class="form-control1" name="class_app" required>
+										<select class="form-control1 col-sm-12" name="class_app" required>
 											<?php while($r = $q->fetch()): ?>
 												<option value="<?php echo $r['id']; ?>" <?php if($result->current_class == $r['id']){echo "selected";} ?>><?php echo $r['class']; ?></option>
 											<?php endwhile; ?>
@@ -182,7 +193,7 @@ foreach($results as $result)
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Contact Address</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="address" rows="5" value="<?php echo htmlentities($result->address);?>" required>
+										<input type="text" class="form-control1 col-sm-12" name="address" rows="5" value="<?php echo htmlentities($result->address);?>" required>
 
 									</div>
 								</div>
@@ -190,17 +201,17 @@ foreach($results as $result)
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Parent/Guardian</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="parent"  placeholder="Parent/Guardian" value="<?php echo htmlentities($result->parent);?>" required>
+										<input type="text" class="form-control1 col-sm-12" name="parent"  placeholder="Parent/Guardian" value="<?php echo htmlentities($result->parent);?>" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Parent/Guardian's Number</label>
 									<div class="col-sm-8">
-										<input type="number" class="form-control1" name="parent_num"  placeholder="Parent/Guardian Number" value="<?php echo htmlentities($result->parent_num);?>" required>
+										<input type="number" class="form-control1 col-sm-12" name="parent_num"  placeholder="Parent/Guardian Number" value="<?php echo htmlentities($result->parent_num);?>" required>
 									</div>
 								</div>
 							<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Last Updation Date</label>
+									<label for="focusedinput" class="col-sm-2 control-label">Last Update</label>
 									<div class="col-sm-8">
 							<?php echo htmlentities($result->register_date);?>
 									</div>

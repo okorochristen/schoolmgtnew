@@ -195,7 +195,11 @@ if(isset($_POST['submit']))
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+  <style>
+	input,select,{
+padding:15px;
+	}
+  </style>
   <body>
 
   <section id="container" >
@@ -229,19 +233,19 @@ if(isset($_POST['submit']))
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-2 control-label">Full Name</label>
 																							<div class="col-sm-8">
-																							<input type="text" class="form-control1" name="fname" placeholder="Full Name" required>
+																							<input type="text" class="form-control1 col-sm-12" name="fname" placeholder="Full Name" required>
 																							</div>
 																						</div>
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-2 control-label">Reg Number</label>
 																							<div class="col-sm-8">
-																							<input type="text" class="form-control1" name="regno" placeholder="Reg Number" required>
+																							<input type="text" class="form-control1 col-sm-12" name="regno" placeholder="Reg Number" required>
 																							</div>
 																						</div>	
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-2 control-label">Gender</label>
 																							<div class="col-sm-8">
-																								<select class="form-control1" name="gender" required>
+																								<select class="form-control1 col-sm-12" name="gender" required>
 																									<option>Select Gender</option>
 																									<option value="Male">Male</option>
 																									<option value="Female">Female</option>
@@ -250,35 +254,35 @@ if(isset($_POST['submit']))
 																						</div>
 																						<div class="form-group">
 																										<label class="col-sm-2 control-label">Date of Birth</label>
-			<div class="col-sm-8">																										<input type="date" name="dob" class="form-control1" placeholder="Date of Birth" required>
+			<div class="col-sm-8">																										<input type="date" name="dob" class="form-control1 col-sm-12" placeholder="Date of Birth" required>
 				</div>
 					</div>
 			<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">State of Origin</label>
 			<div class="col-sm-8">
-			<input type="text" class="form-control1" name="state" placeholder="State of Origin" required>
+			<input type="text" class="form-control1 col-sm-12" name="state" placeholder="State of Origin" required>
 					</div>
 					</div>
 				<div class="form-group">
 				<label for="focusedinput" class="col-sm-2 control-label">Local Government</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control1" name="lga" placeholder="Local Government" required>
+				<input type="text" class="form-control1 col-sm-12" name="lga" placeholder="Local Government" required>
 				</div>
 								</div>
 					<div class="form-group">
 					<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
 									<div class="col-sm-8">
-					<input type="text" class="form-control1" name="nationality" placeholder="Nationality" required>																					</div>
+					<input type="text" class="form-control1 col-sm-12" name="nationality" placeholder="Nationality" required>																					</div>
 					</div>
 																						<div class="form-group">
 			<label for="focusedinput" class="col-sm-2 control-label">Religion</label>
 						<div class="col-sm-8">
-						<input type="text" class="form-control1" name="religion" placeholder="Religion" required>
+						<input type="text" class="form-control1 col-sm-12" name="religion" placeholder="Religion" required>
 							</div>
 						</div>
 								<div class="form-group">
 							<label for="focusedinput" class="col-sm-2 control-label">Class</label>
-							<div class="col-sm-8">																		<select class="form-control1" name="class_app" required id="sl" onchange="master()">
+							<div class="col-sm-8">																		<select class="form-control1 col-sm-12" name="class_app" required id="sl" onchange="master()">
 																									<option value="">Select Class</option>
 									<?php while($q->fetch()): ?>																	<option value="<?php echo $classid; ?>"><?php echo $class; ?></option>
 											<?php endwhile; $q->close(); $db->close(); ?>													</select>
@@ -296,7 +300,7 @@ if(isset($_POST['submit']))
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-3 control-label">Academic Session</label>
 																							<div class="col-sm-8">
-																								<select class="form-control1" name="session" required>
+																								<select class="form-control1 col-sm-12" name="session" required>
 																									<option>Select Session</option>
 										<option value="<?php $m = date('Y'); $sy = $m + 1; echo $m.'/'.$sy; ?>">
 										<?php echo $m.'/'.$sy; ?></option>
@@ -308,25 +312,25 @@ if(isset($_POST['submit']))
 										<div class="form-group">
 									<label for="focusedinput" class="col-sm-4 control-label">Home Address</label>
 										<div class="col-sm-6">
-										<textarea class="form-control1" style="height:120px; width:200px;" name="address" placeholder="Home Address" required></textarea>
+										<textarea class="form-control1 col-sm-12" style="height:120px;" name="address" placeholder="Home Address" required></textarea>
 								</div>
 										</div>
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-4 control-label">Name of Parent/Guardian</label>
 																							<div class="col-sm-8">
-																								<input type="text" class="form-control1" name="parent" placeholder="Name of Parent/Guardian" required>
+																								<input type="text" class="form-control1 col-sm-12" name="parent" placeholder="Name of Parent/Guardian" required>
 																							</div>
 																						</div>
-																						<div class="form-group">
-																							<label for="focusedinput" class="col-sm-6 control-label">Mobile Number of Parent/Guardian</label>
+												<div class="form-group">
+																				<label for="focusedinput" class="col-sm-6 control-label">Mobile Number of Parent/Guardian</label>
 																							<div class="col-sm-8">
-																								<input type="number" class="form-control1" name="parent_num" placeholder="Mobile Number" required>
+																								<input type="number" class="form-control1 col-sm-12" name="parent_num" placeholder="Mobile Number" required>
 																							</div>
 																						</div>
 																						<div class="form-group">
 																							<label for="focusedinput" class="col-sm-4 control-label">Upload students passport</label>
 																							<div class="col-sm-8">
-																								<input type="file" class="form-control1" name="passport" placeholder="passport" required>
+																								<input type="file" class="form-control1 col-sm-12" name="passport" placeholder="passport" required>
 																							</div>
 																						</div>
 																						<div class="row">

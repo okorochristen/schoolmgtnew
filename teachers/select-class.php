@@ -76,13 +76,8 @@
 
 <body>
 
-<<<<<<< HEAD
-<div class="container" style="margin-top: 100px">
-    <div class="col-8 offset-2">
-=======
 <div class="smaller container" style="width:100%">
     <div class="col-sm-10 col-lg-8 ml-auto mr-auto">
->>>>>>> e0624b6f998cbff5ece1ab9fb7c907411972c510
         <h2 class="text-center text-primary"> Scores Entry</h2>
     <div class="card">
         <div class="card-heading bg-primary text-white">
