@@ -2,7 +2,7 @@
 $mysql_hostname = "localhost";
 $mysql_user = "root";
 $mysql_password = "";
-$mysql_database = "scho";
+$mysql_database = "schoolman";
 
 // $mysql_hostname = "localhost";
 // $mysql_user = "beginnersbasicsc_mgt";
