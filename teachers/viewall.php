@@ -206,13 +206,13 @@
                     <td> <a href="view-subject-scores.php?<?php echo 'class='.$class.'&class2='.$class2.'&term='.$term.'&session='.$session.'&subject='.$subjectid; ?>">View</a> </td>
                   </tr>
                 <?php endwhile; ?>
-                <tr>
-                  <?php if ($n < 1): ?>
-                    <td> <a href="compute-result.php?<?php echo 'class='.$class.'&class2='.$class2.'&term='.$term.'&session='.$session; ?>" class="btn btn-primary pull-right">Compute</a> </td>
-                  <?php else: ?>
-                    <td> <a href="reset-result.php? <?php echo 'class='.$class.'&class2='.$class2.'&term='.$term.'&session='.$session; ?>" class="btn btn-primary pull-right">Reset Result</a> </td>
-                  <?php endif; ?>
-                </tr>
+                <!-- <tr>
+                  <?php #if ($n < 1): ?>
+                    <td> <a href="compute-result.php?<?php# echo 'class='.$class.'&class2='.$class2.'&term='.$term.'&session='.$session; ?>" class="btn btn-primary pull-right">Compute</a> </td>
+                  <?php #else: ?>
+                    <td> <a href="reset-result.php? <?php# echo 'class='.$class.'&class2='.$class2.'&term='.$term.'&session='.$session; ?>" class="btn btn-primary pull-right">Reset Result</a> </td>
+                  <?php #endif; ?>
+                </tr> -->
               </tbody>
             </table>
           <?php else: ?>

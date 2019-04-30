@@ -54,84 +54,81 @@
         $q1 = $db->prepare("select total from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
         $q4=$db->prepare('select cs from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         while ($q->fetch()) {
-          $regs[$c] = $regnos;
-          $c++;
-          $q1->bind_param("ssssss", $regnos, $session, $term, $class, $subject, $class2);
-          $q1->execute();
-          $q1->store_result();
-          $q4->bind_param("ssssss", $regnos, $session, $lastterm, $class, $subject, $class2);
-          $q4->execute();
-          $q4->store_result();
-          $n = $q1->num_rows;
-          if ($n > 0) {
-            $q1->bind_result($stotal);
-            $q1->fetch();
-            $q4->bind_result($lts);
-            $q4->fetch();
-            
-          }
-          else {
-            $q4->bind_result($lts);
-            $q4->fetch();
-            $stotal = 0;
-            $k1 = $regnos."as1";
-            if ( (empty($_POST["$k1"])) || (!preg_match("/^[0-9]*$/",$_POST["$k1"])) ) {
-              $as1 = 0;
-            }
-            else {
-              $as1 = $_POST["$k1"];
-            }
-            $k2 = $regnos."as2";
-            if ( (empty($_POST["$k2"])) || (!preg_match("/^[0-9]*$/",$_POST["$k2"])) ) {
-              $as2 = 0;
-            }
-            else {
-              $as2 = $_POST["$k2"];
-            }
-            $k3 = $regnos."ts1";
-            if ( (empty($_POST["$k3"])) || (!preg_match("/^[0-9]*$/",$_POST["$k3"])) ) {
-              $ts1 = 0;
-            }
-            else {
-              $ts1 = $_POST["$k3"];
-            }
-            $k4 = $regnos."ts2";
-            if ( (empty($_POST["$k4"])) || (!preg_match("/^[0-9]*$/",$_POST["$k4"])) ) {
-              $ts2 = 0;
-            }
-            else {
-              $ts2 = $_POST["$k4"];
-            }
-            $k5 = $regnos."exam";
-            if ( (empty($_POST["$k5"])) || (!preg_match("/^[0-9]*$/",$_POST["$k5"])) ) {
-              $exam = 0;
-            }
-            else {
-              $exam = $_POST["$k5"];
-            }
-            
-            
-            
-            $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
-            if($lts!=null){
+                $regs[$c] = $regnos;
+                $c++;
+                $q1->bind_param("ssssss", $regnos, $session, $term, $class, $subject, $class2);
+                $q1->execute();
+                $q1->store_result();
+                $q4->bind_param("ssssss", $regnos, $session, $lastterm, $class, $subject, $class2);
+                $q4->execute();
+                $q4->store_result();
+                $n = $q1->num_rows;
+                $q4->bind_result($lts[$ns]);
+                $q4->fetch();
+                if ($n > 0) {
+                  $q1->bind_result($stotal);
+                  $q1->fetch();
+                            
+                  }
+                else {
+                  $stotal = 0;
+                  $k1 = $regnos."as1";
+                  if ( (empty($_POST["$k1"])) || (!preg_match("/^[0-9]*$/",$_POST["$k1"])) ) {
+                    $as1 = 0;
+                  }
+                  else {
+                    $as1 = $_POST["$k1"];
+                  }
+                  $k2 = $regnos."as2";
+                  if ( (empty($_POST["$k2"])) || (!preg_match("/^[0-9]*$/",$_POST["$k2"])) ) {
+                    $as2 = 0;
+                  }
+                  else {
+                    $as2 = $_POST["$k2"];
+                  }
+                  $k3 = $regnos."ts1";
+                  if ( (empty($_POST["$k3"])) || (!preg_match("/^[0-9]*$/",$_POST["$k3"])) ) {
+                    $ts1 = 0;
+                  }
+                  else {
+                    $ts1 = $_POST["$k3"];
+                  }
+                  $k4 = $regnos."ts2";
+                  if ( (empty($_POST["$k4"])) || (!preg_match("/^[0-9]*$/",$_POST["$k4"])) ) {
+                    $ts2 = 0;
+                  }
+                  else {
+                    $ts2 = $_POST["$k4"];
+                  }
+                  $k5 = $regnos."exam";
+                  if ( (empty($_POST["$k5"])) || (!preg_match("/^[0-9]*$/",$_POST["$k5"])) ) {
+                    $exam = 0;
+                  }
+                  else {
+                    $exam = $_POST["$k5"];
+                  }
+                  $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
+                  if($lts[$ns]!=null){
               
-              $cs=$stotal+$lts/2;
-            }else{
-              
-              $cs=$stotal;
-              $lts=$stotal;
-            }
-            
-          }
+                    $cs=($stotal+$lts[$ns])/2;
+                  }else{
+                    
+                    $cs=$stotal;
+                    // $lts=$stotal;
+                  }
+                }
           $ctotal += $stotal;
+
+                 
         }
         $q->free_result();
         $q->close();
+       
         $caverage = $ctotal / $ns;
         // var_dump($lts);
         //update class average of students whose scores have been Entered before now.
         $q1 = $db->prepare('update scores set class_average = ? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
-        $q1->bind_param('ssssssss', $caverage,$lts,$cs,$session, $term, $class, $subject, $class2);
+        $q1->bind_param('ssssss', $caverage,$session, $term, $class, $subject, $class2);
         $q1->execute();
         $q1->close();
         $q1 = $db->prepare('select count(total) from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
@@ -187,13 +184,18 @@
                 $exam = $_POST["$k5"];
               }
               $stotal = $as1 + $as2 + $ts1 + $ts2 + $exam;
-              if($lts!=null){
-                $cs=$stotal+$lts/2;
+              
+              
+              if($lts[$ns]!=null || $lts[$ns]!=0){
+              
+                $cs=($stotal+$lts[$ns])/2;
               }else{
-
+                
                 $cs=$stotal;
-                $lts=$cs;
-              } 
+                $lts=0;
+              }
+              var_dump($lts[$ns]);
+              var_dump($cs);
               $grade = grade($cs);
               // var_dump($cs);
               
