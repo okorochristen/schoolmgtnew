@@ -68,6 +68,8 @@ else{
 	  } */
 	  .smalley-table{
 		  width:100%;
+		  margin:auto;
+		
 		 
 	  }
 	  .smalley-row{
@@ -78,6 +80,7 @@ else{
 		color:#fff;
 		font-weight:bold;
 	  }
+	
   </style>
 
   <body>
@@ -93,28 +96,26 @@ else{
             <!--header start here-->
 				     <div class="clearfix"> </div>
 				</div>
-<!--heder end here-->
-<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Manage Students</li>
+<!--header end here-->
+<div class="container">
+			<ol class="breadcrumb">
+                <li class="breadcrumb-item" style="font-size:20px; color:#e74c3c;"><a href="dashboard.php" style="font-size:20px;">Home &nbsp</a><i class="fa fa-angle-right" style="font-size:20px; color:black;"></i>&nbsp Manage Students </li>
             </ol>
 <div class="agile-grids">
 				<!-- tables -->
 
-				<div class="agile-tables">
-					<div class="w3l-table-info">
-					  <h2>
-							Manage Students
-							<span class="pull-right">
-								<a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
+				<div class="container agile-tables">
+					<div class="w3l-table-info row">
+					  <h2>Manage Students</h2>
+						<span class="pull-right">
+						 <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=A" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "A"){echo 'active';} ?>">A</a>
 					      <a href="managenew-students.php?cl=<?php echo $cl; ?>&cl2=B" class="smally btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "B"){echo 'active';} ?>">B</a>
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=C" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "C"){echo 'active';} ?>">C</a>-->
 								<!--<a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=D" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "D"){echo 'active';} ?>">D</a>-->
 					   <!--   <a href="manage-students.php?cl=<?php echo $cl; ?>&cl2=E" class="btn btn-default <?php if(isset($_GET['cl2']) && $_GET['cl2'] == "E"){echo 'active';} ?>">E</a>				-->
 							</span>
-						</h2>
-					    <table id="table" class="table-responsive table table-striped smalley-table">
-					    
-					        <div class="smalley pull-right">
+						
+						<div class="smalley pull-right">
                                  <a href="managenew-students.php?cl=1" class="smally btn btn-default <?php if($cl == 1){echo 'active';} ?>">Pre-School</a>
                                  <a href="managenew-students.php?cl=2" class="smally btn btn-default <?php if($cl == 2){echo 'active';} ?>">Pre-K1</a>
                                  <a href="managenew-students.php?cl=3" class="smally btn btn-default <?php if($cl == 3){echo 'active';} ?>">Pre-K2</a>
@@ -124,7 +125,11 @@ else{
                                  <a href="managenew-students.php?cl=7" class="smally btn btn-default <?php if($cl == 7){echo 'active';} ?>">Grade 3</a>
                                  <a href="managenew-students.php?cl=8" class="smally btn btn-default <?php if($cl == 8){echo 'active';} ?>">Grade 4</a>
                                  <a href="managenew-students.php?cl=9" class="smally btn btn-default <?php if($cl == 9){echo 'active';} ?>">Grade 5</a>
-                            </div>
+							</div>
+						<div class="table-responsive">
+					    <table id="table" class=" table table-striped smalley-table">
+					    
+					     
 						<thead class="thead-dark">
 						  <tr class="smalley-row">
 						  <th class="smalley-h">Passport</th>
@@ -176,8 +181,11 @@ else{
 						 <?php }?>
 						</tbody>
 					  </table>
+					  
+						 </div>
 					</div>
 			</div>
+						 </div>
 			<script>
 		$(document).ready(function() {
 			 var navoffeset=$(".header-main").offset().top;

@@ -125,7 +125,7 @@
         </select>
       </div>
       <div class="form-group col-sm-12">
-        <a href="dashboard.php" class="btn btn-outline-info input-sm">Back</a>
+        <a href="dashboard.php" class="btn btn-outline-info input-sm">Back to Dashboard</a>
         <button type="submit" class="btn btn-outline-primary input-sm" name="scores_btn">Continue</button>
       </div>
     </form>
