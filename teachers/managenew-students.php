@@ -11,9 +11,9 @@ else{
     if(isset($_GET['cl'])){
         $cl = $_GET['cl'];
     }
-    else{
-        $cl = 1;
-    }
+    // else{
+    //     $cl = 1;
+    // }
 	?>
 <!DOCTYPE html>
 <html lang="en">
