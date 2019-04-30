@@ -140,7 +140,7 @@
               <th>Last term score</th>
               <th>Cum Score</th>
               <th>Grade</th>
-              <!-- <th>Class highest mark</th> -->
+              <th>Class highest mark</th>
               <th>Class Avg</th>
               <!-- <th>Position</th>
               <th>Remarks</th> -->
@@ -152,7 +152,7 @@
             <?php while ($q0->fetch()): ?>
             
               <?php
-                $q = $db->prepare('select as1, as2,exam,total,lts,cs,grade,class_average from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?');
+                $q = $db->prepare('select as1, as2,exam,total,lts,cs,grade,chm,class_average from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?');
                 $q->bind_param('sssss', $session, $term, $class, $subject, $regno);
                 $q->execute();
                 $q->store_result();
@@ -162,7 +162,7 @@
                 <td><?php echo $regno; ?></td>
                 <td><?php echo $fname; ?></td>
                 <?php if ($no > 0):
-                  $q->bind_result($as1, $as2, $exam, $total,$lts,$cs,$grade,$class_average);
+                  $q->bind_result($as1, $as2, $exam, $total,$lts,$cs,$grade,$chm,$class_average);
                   $q->fetch();
                 
                 ?>
@@ -173,7 +173,7 @@
                   <td><?php echo $lts; ?></td>
                   <td><?php echo $cs; ?></td>
                   <td><?php echo $grade; ?></td>
-                
+                  <td><?php echo $chm; ?></td>
                   <td><?php echo $class_average; ?></td>
                   
                   

@@ -51,7 +51,7 @@
         // var_dump($q->execute());
         $q->store_result();
         $ns = $q->num_rows;
-        $q1 = $db->prepare("select total from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
+        $q1 = $db->prepare("select total,max(cs)from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
         $q4=$db->prepare('select cs from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         while ($q->fetch()) {
                 $regs[$c] = $regnos;
@@ -66,12 +66,13 @@
                 $q4->bind_result($lts[$ns]);
                 $q4->fetch();
                 if ($n > 0) {
-                  $q1->bind_result($stotal);
+                  $q1->bind_result($stotal,$max_score);
                   $q1->fetch();
                             
                   }
                 else {
                   $stotal = 0;
+                  $cs=0;
                   $k1 = $regnos."as1";
                   if ( (empty($_POST["$k1"])) || (!preg_match("/^[0-9]*$/",$_POST["$k1"])) ) {
                     $as1 = 0;
@@ -117,24 +118,26 @@
                     // $lts=$stotal;
                   }
                 }
+          // var_dump($cs)
           $ctotal += $stotal;
 
                  
         }
         $q->free_result();
         $q->close();
-       
+      //  var_dump($max_score);
+      //  var_dump($)
         $caverage = $ctotal / $ns;
         // var_dump($lts);
         //update class average of students whose scores have been Entered before now.
-        $q1 = $db->prepare('update scores set class_average = ? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
-        $q1->bind_param('ssssss', $caverage,$session, $term, $class, $subject, $class2);
+        $q1 = $db->prepare('update scores set class_average = ?,chm=? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
+        $q1->bind_param('sssssss', $caverage,$max_score,$session, $term, $class, $subject, $class2);
         $q1->execute();
         $q1->close();
         $q1 = $db->prepare('select count(total) from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         
         
-        $q0 = $db->prepare('INSERT into scores (regno, session, term, class, class2, subject, as1, as2, ts1, ts2, exam, total, grade, class_average, staffid,lts,cs) values (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)');
+        $q0 = $db->prepare('INSERT into scores (regno, session, term, class, class2, subject, as1, as2, ts1, ts2, exam, total, grade, class_average, staffid,lts,cs,chm) values (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)');
         // var_dump($q0);
         $al = count($regs);
         for ($i = 0; $i < $al; $i++) {
@@ -199,7 +202,7 @@
               $grade = grade($cs);
               // var_dump($cs);
               
-              $q0->bind_param('sssssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff,$lts,$cs);
+              $q0->bind_param('ssssssssssssssssss', $regnos, $session, $term, $class, $class2, $subject, $as1, $as2, $ts1, $ts2, $exam, $stotal, $grade, $caverage, $staff,$lts,$cs,$max_score);
               $q0->execute();
               
               $q0->store_result();
