@@ -207,15 +207,19 @@ padding:15px;
 <?php include("includes/sidebar.php");?>
       <section id="main-content">
           <section class="wrapper">
-
-    				<div class="row">
+   <div class="page-container">
             <!-- <div class="clearfix" style="margin-top:5px;"></div> -->
-						 
-    					<div class="col-9 offset-2">
-        						<div class="card card-primary" >
-													<div class="card-header bg-primary text-white">
-														<h3 class="text-center">Add New Student</h3> 
-													</div>
+
+<ol class="breadcrumb">
+                <li class="breadcrumb-item" style="font-size:20px; color:#e74c3c;"><a href="dashboard.php" style="font-size:20px;">Home &nbsp</a><i class="fa fa-angle-right" style="font-size:20px; color:black;"></i>&nbsp Add Student </li>
+            </ol>
+		<!--grid-->
+ 	<div class="grid-form">
+
+<!---->
+<div class="grid-form1">
+  	       <h3 style="color:#008de7">Add New Student</h3>
+        						<!-- <div class="card card-primary" > -->
 													<div class="card-body bg-white" height="700px">
 																			<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>: <span style="color:red">OOPS! </span><?php echo htmlentities($error); ?> </div><?php }
 															else if($msg){?><div class="succWrap bg-sucess"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
