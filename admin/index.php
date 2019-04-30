@@ -122,7 +122,7 @@ body, html {
 <div class="col-md-6 offset-md-3" style="margin-top:60px">
     <div class="card">
         <div class="card-header bg-primary text-light">
-          <h2 class="text-center">RHIMONI ACADEMY ADMIN LOGIN</h2>
+          <h2 class="text-center">BEGINNERS' BASIC SCHOOLS ADMIN LOGIN</h2>
         </div>
         <div class="card-body">
         <form class="form-horizontal" method="post">

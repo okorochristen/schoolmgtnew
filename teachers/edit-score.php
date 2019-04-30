@@ -77,8 +77,8 @@
       </head>
       <body class="bglight">
 
-        <section class="bglight  borderbottom" style="margin-top: 40px">
-          <div class="col-8 offset-2">
+        <section class="bglight  borderbottom" style="margin-top: 150px">
+          <div class="col-sm-10 col-lg-8 mr-auto ml-auto">
               <div class="card">
                   <div class="card-heading bg-primary text-white text-center">
                       <div class="col-sm-12 form-group">

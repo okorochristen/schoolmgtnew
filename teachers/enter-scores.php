@@ -102,11 +102,19 @@
         .input-sm{
           border-radius: 0
         }
+        @media (max-width:600px){
+          .smally{
+            margin-top:200px!important;
+          }
+        }
+        .smally{
+            margin-top:100px;
+        }
       </style>
     </head>
 <body class="bglight bgwhite">
 
-<div class="container-fluid" style="padding-top: 60px;">
+<div class="container-fluid smally" style="padding-top: 60px;">
   <div class="col-12">
       <div class="card">
           

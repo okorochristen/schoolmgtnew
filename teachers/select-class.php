@@ -53,13 +53,31 @@
         .input-sm{
           border-radius: 0
         }
+        @media only screen and (max-width: 500px) {
+          body {
+           
+          }
+          .offset-2{
+            margin: 0px;
+          }
+          .col-8{
+            max-width: 100%;
+          }
+        .smaller{
+          margin-top: 70px;
+        }
+        @media (max-width:375px){
+        .smaller{
+          margin-top: 150px!important;
+        } 
+        }
       </style>
     </head>
 
 <body>
 
-<div class="container" style="margin-top: 60px">
-    <div class="col-8 offset-2">
+<div class="smaller container" style="width:100%">
+    <div class="col-sm-10 col-lg-8 ml-auto mr-auto">
         <h2 class="text-center text-primary"> Scores Entry</h2>
     <div class="card">
         <div class="card-heading bg-primary text-white">

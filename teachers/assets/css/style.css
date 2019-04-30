@@ -18,6 +18,10 @@ body {
     margin: 0px !important;
     font-size:13px;
 }
+.w3l-table-info h2,.agile-tables h3 {
+    font-size: 28px;
+    color: #1b93e1;
+}
 
 ul li {
     list-style: none;
@@ -511,6 +515,11 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
     };
+    }
+
+    @media screen and (min-width: 480px) {
+        #leftsidebar {width: 200px; float: left;}
+        #main {margin-left:216px;}
     }
 
 .dropdown-menu.extended li p {

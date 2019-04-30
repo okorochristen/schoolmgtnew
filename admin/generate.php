@@ -37,10 +37,18 @@
   <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
   <!-- //lined-icons -->
   </head>
+  <style>
+  @media screen and (max-width: 600px) {
+    .small{
+        padding-left:60px!important;
+        position:relative;
+    }
+}
+</style>
   <body>
-    <div class="container col-md-offset-3 col-md-6" style="padding-top: 90px">
+    <div class="small container col-md-offset-3 col-md-6" style="padding-top: 90px">
       
-      <h3>GENERATE PIN FOR SECONDARY RESULT CHECKING</h3><br>
+      <h3 class="text-center">GENERATE PIN FOR STUDENT RESULT CHECKING</h3><br>
       <div class="row">
 
         <div class="container col-md-12 col-md-offset-6">

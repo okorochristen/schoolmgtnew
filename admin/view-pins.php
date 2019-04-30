@@ -69,8 +69,28 @@
   <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
   <!-- //lined-icons -->
   </head>
+  <style>
+    @media (max-width:600px){
+    .smally{
+        margin-top:50px!important;
+        margin-left:45px!important;
+        width:90%!important;
+    }
+    .botton{
+      margin-bottom:30px;
+    }
+}
+.smally{
+    margin-top:80px;
+    margin-left:230px;
+    width:90%;
+}
+.smally h3{
+  padding-bottom:40px;
+}
+  </style>
   <body>
-    <div class="container" style="margin:50px; padding-left:250px">
+    <div class="container smally">
     <?php if ( isset($_GET['session']) && isset($_GET['class']) && isset($_GET['term']) && isset($_GET['class2']) ):
       $session = $_GET['session'];
       $term = $_GET['term'];
@@ -143,12 +163,12 @@
   <?php $db->close(); ?>
 
 <?php else: ?>
-  <h3 class="text-center">View List of Pins Generated for Primary School Students</h3>
+  <h3 class="text-center ">View List of Pins Generated for Primary School Students</h3>
   <form class="form-group" role="form">
       <div class="row">
 
    <div class="form-group col-md-3">
-     <label for="session">Accademic Session</label>
+     <label for="session">Academic Session</label>
      <?php
        $q = $db->prepare("SELECT distinct session from result order by session desc");
        $q->execute();
@@ -200,7 +220,7 @@
      </select>
    </div>
    <div class="form-group col-md-6">
-   <button type="submit" class="btn btn-info input-sm col-md-3">Submit</button>
+   <button type="submit" class="btn btn-info input-sm col-md-3 botton">Submit</button>
    <a href="dashboard.php"class="btn btn-info input-sm col-md-3">Back</a>
    </div>
  </form>
