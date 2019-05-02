@@ -177,6 +177,7 @@ if(isset($_POST['submit']))
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
@@ -188,6 +189,7 @@ if(isset($_POST['submit']))
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
+	
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -196,8 +198,8 @@ if(isset($_POST['submit']))
     <![endif]-->
   </head>
   <style>
-	input,select,{
-padding:15px;
+	input,select{
+padding:10px;
 	}
   </style>
   <body>
@@ -264,24 +266,73 @@ padding:15px;
 			<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">State of Origin</label>
 			<div class="col-sm-8">
-			<input type="text" class="form-control1 col-sm-12" name="state" placeholder="State of Origin" required>
+							<select name="state" id="state" class="col-sm-12">
+							  <option value="" selected="selected" >- Select -</option> 
+							   <option value='Abia'>Abia</option>
+							  <option value='Adamawa'>Adamawa</option>
+							  <option value='AkwaIbom'>AkwaIbom</option>
+							  <option value='Anambra'>Anambra</option>
+							  <option value='Bauchi'>Bauchi</option>
+							  <option value='Bayelsa'>Bayelsa</option>
+							  <option value='Benue'>Benue</option>
+							  <option value='Borno'>Borno</option>
+							  <option value='Cross River'>Cross River</option>
+							  <option value='Delta'>Delta</option>
+							  <option value='Ebonyi'>Ebonyi</option>
+							  <option value='Edo'>Edo</option>
+							  <option value='Ekiti'>Ekiti</option>
+							  <option value='Enugu'>Enugu</option>
+							  <option value='FCT'>FCT</option>
+							  <option value='Gombe'>Gombe</option>
+							  <option value='Imo'>Imo</option>
+							  <option value='Jigawa'>Jigawa</option>
+							  <option value='Kaduna'>Kaduna</option>
+							  <option value='Kano'>Kano</option>
+							  <option value='Katsina'>Katsina</option>
+							  <option value='Kebbi'>Kebbi</option>
+							  <option value='Kogi'>Kogi</option>
+							  <option value='Kwara'>Kwara</option>
+							  <option value='Lagos'>Lagos</option>
+							  <option value='Nasarawa'>Nasarawa</option>
+							  <option value='Niger'>Niger</option>
+							  <option value='Ogun'>Ogun</option>
+							  <option value='Ondo'>Ondo</option>
+							  <option value='Osun'>Osun</option>
+							  <option value='Oyo'>Oyo</option>
+							  <option value='Plateau'>Plateau</option>
+							  <option value='Rivers'>Rivers</option>
+							  <option value='Sokoto'>Sokoto</option>
+							  <option value='Taraba'>Taraba</option>
+							  <option value='Yobe'>Yobe</option>
+							  <option value='Zamfara'>Zamafara</option>
+							</select>
 					</div>
 					</div>
 				<div class="form-group">
 				<label for="focusedinput" class="col-sm-2 control-label">Local Government</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control1 col-sm-12" name="lga" placeholder="Local Government" required>
+			<select name="lga" id="lga" class="col-sm-12" required>
+							</select>
 				</div>
 								</div>
 					<div class="form-group">
 					<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
 									<div class="col-sm-8">
-					<input type="text" class="form-control1 col-sm-12" name="nationality" placeholder="Nationality" required>																					</div>
+									<select name="religion" id="religion" class="col-sm-12">
+						<option value="">- Select -</option> 
+						<option value='Christianity'>Nigerian</option>
+						<option value='Others'>Others</option>
+						</select>																					</div>
 					</div>
 																						<div class="form-group">
 			<label for="focusedinput" class="col-sm-2 control-label">Religion</label>
 						<div class="col-sm-8">
-						<input type="text" class="form-control1 col-sm-12" name="religion" placeholder="Religion" required>
+						<select name="religion" id="religion" class="col-sm-12">
+						<option value="" selected="selected" >- Select -</option> 
+						<option value='Zamfara'>Christianity</option>
+						<option value='Zamfara'>Islam</option>
+						<option value='Zamfara'>Others</option>
+						</select>
 							</div>
 						</div>
 								<div class="form-group">
@@ -379,6 +430,7 @@ padding:15px;
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
@@ -387,6 +439,7 @@ padding:15px;
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="assets/js/jquery.sparkline.js"></script>
+	<script src="assets/js/lga.js"></script>
 
 
     <!--common script for all pages-->

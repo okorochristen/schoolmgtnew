@@ -58,7 +58,7 @@
 
             <div class="row">
             <div class="clearfix"></div>
-                     <div class="col-md-2 col-sm-2 box0">
+                     <div class="col-md-4 col-sm-2 box0">
     	<div class="box1">
 			<span class="li_news"></span>
       <?php
@@ -75,25 +75,10 @@
                       <?php }?>
 
 
-                      <div class="col-md-2 col-sm-2 box0">
-                        <div class="box1">
-                          <span class="li_news"></span>
-                          <?php
-                            $q = $db->prepare("SELECT count(id) FROM result2");
-                            $q->execute();
-                            $q->bind_result($num2);
-                            $q->fetch();
-                            $q->close();
-                        {?>
-
-                          <!--<h3><?php echo htmlentities($num2);?> PRIMARY </h3>-->
-                        </div>
-                        <!--<p><?php echo htmlentities($num2);?>  Results</p>-->
-                      </div>
-                    <?php }?>
+                     
                     
                     
-                <div class="col-md-2 col-sm-2 box0">
+                <div class="col-md-4 col-sm-2 box0">
                         <div class="box1">
                           <span class="li_news"></span>
                           <?php
@@ -109,7 +94,7 @@
                         <p><?php echo htmlentities($num3);?>  Results</p>
                       </div>
                     <?php }?>
-                       <div class="col-md-2 col-sm-2 box0">
+                       <div class="col-md-4 col-sm-2 box0">
                         <div class="box1">
                           <span class="li_news"></span>
                           <?php

@@ -227,10 +227,10 @@
       $q0->free_result();
       $q0->close();
     ?>
-      <h2>There are no students in <?php echo $cl.$class2; ?></h2>
+      <h2>There are no students in <?php echo $cl." ".$class2; ?></h2>
     <?php endif; ?>
   </div>
-     
+  <a href="dashboard.php" class="btn btn-outline-info input-sm">Back to Dashboard</a>
         </div>
       </div>
   

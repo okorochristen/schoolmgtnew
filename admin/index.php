@@ -91,8 +91,10 @@ elseif (isset($_SESSION['alogin'])) {
 }
 body, html {
     height: 100%;
-    background-repeat: no-repeat;
-    background-color: rgba(10, 111, 120, 0.6);
+    /*height: 100%;*/
+    /*background-repeat: no-repeat;*/
+    background-image: url('https://media.brstatic.com/2016/01/21185259/personal-loan-blog-sofi-challenges-fico-scores.jpg');
+    background-size: cover;
 }
 
 .card-container.card {
