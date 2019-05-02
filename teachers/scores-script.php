@@ -42,6 +42,7 @@
           $lastterm=1;
         }
         $ctotal = 0;
+        $max_score=0;
         $regs = array();
         $c = 0;
         $q = $db->prepare("select distinct regno from accepted_students where current_class = ? and class = ? and current_session = ?");
@@ -51,7 +52,7 @@
         // var_dump($q->execute());
         $q->store_result();
         $ns = $q->num_rows;
-        $q1 = $db->prepare("select total,max(cs)from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
+        $q1 = $db->prepare("select total,max(cs) from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?");
         $q4=$db->prepare('select cs from scores where regno = ? and session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         while ($q->fetch()) {
                 $regs[$c] = $regnos;
@@ -73,6 +74,7 @@
                 else {
                   $stotal = 0;
                   $cs=0;
+                  
                   $k1 = $regnos."as1";
                   if ( (empty($_POST["$k1"])) || (!preg_match("/^[0-9]*$/",$_POST["$k1"])) ) {
                     $as1 = 0;
@@ -112,9 +114,11 @@
                   if($lts[$ns]!=null){
               
                     $cs=($stotal+$lts[$ns])/2;
+                    // $max_score=$cs;
                   }else{
                     
                     $cs=$stotal;
+                    // $max_score=$stotal;
                     // $lts=$stotal;
                   }
                 }
@@ -125,12 +129,13 @@
         }
         $q->free_result();
         $q->close();
+        var_dump($max_score);
       //  var_dump($max_score);
       //  var_dump($)
         $caverage = $ctotal / $ns;
         // var_dump($lts);
         //update class average of students whose scores have been Entered before now.
-        $q1 = $db->prepare('update scores set class_average = ?,chm=? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
+        $q1 = $db->prepare('pdate scores set class_average = ?,chm=? where session = ? and term = ? and class = ? and subject = ? and class2 = ?');
         $q1->bind_param('sssssss', $caverage,$max_score,$session, $term, $class, $subject, $class2);
         $q1->execute();
         $q1->close();
