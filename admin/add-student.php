@@ -310,7 +310,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="nationality" placeholder="Nationality" required>
+									<select name="religion" id="religion" class="col-sm-12">
+						<option value="">- Select -</option> 
+						<option value='Christianity'>Nigerian</option>
+						<option value='Islam'>Others</option>
+				
+						</select>
 									</div>
 								</div>
 								<div class="form-group">
@@ -455,6 +460,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--js -->
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/lga.js"></script>
 <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
    <!-- /Bootstrap Core JavaScript -->

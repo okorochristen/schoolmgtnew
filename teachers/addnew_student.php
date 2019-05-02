@@ -318,7 +318,11 @@ padding:10px;
 					<div class="form-group">
 					<label for="focusedinput" class="col-sm-2 control-label">Nationality</label>
 									<div class="col-sm-8">
-					<input type="text" class="form-control1 col-sm-12" name="nationality" placeholder="Nationality" required>																					</div>
+									<select name="religion" id="religion" class="col-sm-12">
+						<option value="">- Select -</option> 
+						<option value='Christianity'>Nigerian</option>
+						<option value='Others'>Others</option>
+						</select>																					</div>
 					</div>
 																						<div class="form-group">
 			<label for="focusedinput" class="col-sm-2 control-label">Religion</label>
