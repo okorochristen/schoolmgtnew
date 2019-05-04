@@ -2,8 +2,8 @@
 // DB credentials.
 $host = "localhost";
 $username = "root";
-$password = "password";
-$database = "scho";
+$password = "root";
+$database = "school";
 
 // $host = "localhost";
 // $username = "beginnersbasicsc_mgt";

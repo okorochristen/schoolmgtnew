@@ -1,6 +1,7 @@
 <?php
     ob_start();
   session_start();
+  
   error_reporting(E_ALL);
   ini_set('display_errors', 'on');
 ?>
@@ -25,6 +26,8 @@
     }
     else {
       include 'includes/db.php';
+      // include "aa.php";
+      include 'aa.php';
       $class = $_REQUEST['class'];
       $class2 = $_REQUEST['class2'];
       $subject = $_REQUEST['subject'];
@@ -160,7 +163,8 @@
             <?php while ($q0->fetch()): ?>
             
               <?php
-                $q = $db->prepare('select as1, as2,exam,total,lts,cs,grade,chm,class_average from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?');
+                $q = $db->prepare('select as1, as2,ts1, ts2, exam, total, grade, class_average from scores where session = ? and term = ? and class = ? and subject = ? and regno = ?;');
+                // var_dump($q);
                 $q->bind_param('sssss', $session, $term, $class, $subject, $regno);
                 $q->execute();
                 $q->store_result();
@@ -170,20 +174,32 @@
                 <td><?php echo $regno; ?></td>
                 <td><?php echo $fname; ?></td>
                 <?php if ($no > 0):
-                  $q->bind_result($as1, $as2, $exam, $total,$lts,$cs,$grade,$chm,$class_average);
+                  $q->bind_result($as1, $as2, $ts1, $ts2, $exam, $total,$grades, $class_average);
                   $q->fetch();
                 
                 ?>
-                  <td><?php echo $as1; ?></td>
-                  <td><?php echo $as2; ?></td>
+                  <?php 
+                  
+                ?>   
+                  <td><?php echo $as1+$as2; ?></td>
+                  <td><?php echo $ts1+$ts2; ?></td>
                   <td><?php echo $exam; ?></td>
                   <td><?php echo $total; ?></td>
-                  <td><?php echo $lts; ?></td>
-                  <td><?php echo $cs; ?></td>
-                  <td><?php echo $grade; ?></td>
-                  <td><?php echo $chm; ?></td>
-                  <td><?php echo $class_average; ?></td>
+                  <td><?php echo "last term"; ?></td>
+                  <td><?php echo "cum score"; ?></td>
                   
+                  
+
+                  <td><?php echo $grades; ?></td>
+                  <td>
+                    <?php 
+                    
+                      echo $result;
+                    ?>
+                  </td>
+                  <td><?php echo $class_average; ?></td>
+               
+                   
                   
 
                   <td><a href="edit-score.php?class2=<?php echo $class2; ?>&session=<?php echo $session; ?>&term=<?php echo $term; ?>&class=<?php echo $class; ?>&subject=<?php echo $subject; ?>&regno=<?php echo $regno; ?>" class="btn btn-outline-info">Edit</a></td>
